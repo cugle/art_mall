@@ -1,0 +1,11 @@
+						{foreach from=$home.users_comms item=users_comms}
+								<li class="line" style="margin:5px;width:520px; height:24px; overflow:hidden;">
+									<div class="user">{$users_comms.name_coms_type}</div> 
+									<div style="width:300px;float:left; height:24px; overflow:hidden;"><A HREF="{$users_comms.name_http}" target="_blank">{$users_comms.name}</A></div>
+									<div style="width:100px;float:left">{$users_comms.dateadd}</div> 
+								</li> 
+								{if $home.users_comms_page}
+									<li class="fenye">{$home.users_comms_page}</li>
+								{/if}
+						{/foreach}
+ 

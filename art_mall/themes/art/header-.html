@@ -1,0 +1,32 @@
+<div class="header">
+
+  <div class="logo"><a href="/index.php"><img src="{$template_path}images/logo.jpg" border="0" /></a></div>
+  <div id="menu">
+    <ul id="nav">
+      
+      <li  ><span class="note"> </span></li> 
+       
+	
+											<!-- {if $home.pro_fid < 1} -->
+												<!-- {foreach from=$home.Productcat item=productcat} -->  
+														  
+														<li class="mainlevel" id="mainlevel_01"><a href="{$productcat.name_url}"><img src="{$productcat.pro_interval}" width="105" height="56" /></a>
+														<ul class="sub_nav_01">
+    												    <span class="Triangle_con"></span>
+														{if $productcat.next_node}
+														<!-- {foreach from=$productcat.next_node item=next_node} --> 
+															<li>{$next_node.sub_next}</li>
+														<!-- {/foreach} --> 
+														{/if}
+														 </ul>
+	  </li>
+												<!-- {/foreach} --> 
+											
+											<!-- {/if} -->
+											
+	   
+	   
+
+    </ul>
+  </div>
+</div>

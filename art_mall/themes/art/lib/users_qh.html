@@ -1,0 +1,38 @@
+{if $home.showpage}
+	<li style="margin:2px 0 0 0;color:#0066FF;font-weight: bold; padding-left:5px ;background-color:#A6A6FF;width:615px;">
+		<span class="fenye" style="margin: 1px;float:right"  > {$home.showpage} </span > 
+	</li> 
+{/if}
+<li class="line" style="margin:5px;width:615px; height:24px;font-weight: bold; overflow:hidden;">
+	<div style="width:30px; height:24px;float:left"></div>
+	<div style="width:70px; height:24px;float:left">产品图片</div>
+	<div style="width:100px; height:24px;float:left">编号</div> 
+	<div style="width:260px; height:24px;float:left">名称</div>  
+	<div style="width:60px; height:24px;float:left">现货价</div> 
+	<div style="width:60px; height:24px;float:left">您的价格</div>  
+</li> 
+ 
+<!--{if $home.products} -->
+	<!-- {foreach from=$home.products item=products} -->  
+			<li class="line" style="margin:5px;width:615px; height:52px; overflow:hidden;">
+				<div style="width:30px; height:52px;float:left"><INPUT TYPE="checkbox" NAME="prid[]" value="{$new.prid}"></div>
+				<div style="width:70px; height:52px;float:left; overflow:hidden;">
+				<a href="{$products.product_url}" target="_blank"><img SRC="{$products.shop_thumb}"  WIDTH="67" HEIGHT="50" BORDER="0" title="{$products.alt_name} {$products.edit_comm}"></a>
+				</div>
+				<div style="width:100px; height:52px;float:left; overflow:hidden;">{$products.shop_sn}</div> 
+				<div style="width:260px; height:52px;float:left; overflow:hidden;"><A HREF="{$products.product_url}" target="_blank">{$products.name}</A></div>  
+				<div style="width:60px; height:52px;float:left">{$products.shop_price}</div> 
+				<div style="width:60px; height:52px;float:left">{$products.s_discount}</div> 
+			</li> 
+	<!-- {/foreach} -->
+	 
+	<li style="margin:2px 0 0 0;color:#0066FF;font-weight: bold; padding-left:5px ;background-color:#A6A6FF;width:615px;">
+		<span class="fenye" style="margin: 1px;float:right" > {$home.showpage} </span > 
+	</li> 
+<!--{/if}-->
+<script language="JavaScript">
+  {literal}
+
+
+  {/literal}
+</script>

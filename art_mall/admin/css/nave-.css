@@ -1,0 +1,77 @@
+@charset "utf-8";
+/* CSS Document */
+#header{width:100%; background:url(../images_blue/bg-header.gif)}
+#logo{ width:126px; height:30px; line-height:30px; border-right:1px solid #FFFFFF; text-align:center;  float:left; background:#7EB6D9; color:#FFFFFF; font-weight:bold;  }
+#menu{ width:90%; height:30px; line-height:30px; text-align:left; float:left; }
+#menu a{ margin:0px;}
+#main{width:100%}
+#nav{ width:126px; float:left;}
+#content{ width:90%; float:left;}
+#bg_footer{ background: #7EB6D9;}
+.bg_logo{  background:#7EB6D9; color:#FFFFFF; font-weight:bold; background:url(../images_blue/bg-logo.gif); border-bottom:1px solid #FFFFFF;}
+.nav_top{ background:url(../images_blue/nav-top.gif); height:8px;}
+.nav_middle{ background:url(../images_blue/nav-middle.gif) repeat-y left;}
+.nav_middle ul { color:#2B80BB; width:114px; text-align:center;}
+.nav_middle ul li{ padding-left:1px;}
+.nav_middle ul li h6 { width:114px; background:url(../images_blue/bg-nav.gif) no-repeat; height:28px; display:block;line-height:28px;cursor:pointer;overflow:hidden;}
+.nav_middle ul li h6 a {font-weight:bold; }
+.bg_header{ background:url(../images_blue/bg-header.gif); color:#2B80BB; height:30px; line-height:30px; border-bottom:1px solid #FFFFFF;}
+.bg_header_style{ background:url(../images_blue/bg-header.gif); border-bottom:1px solid #FFFFFF;}
+.bg_header_style a{ float:left; margin:0 2px;}
+.bg_header a{ margin:0 8px; }
+.button{ background:#EBF7FF; border-bottom:1px solid #2B80BB; height:24px; margin:1px; padding-left:10px;}
+.button a{ color:#2B80BB; font-weight:bold; margin:0 5px;}
+.bg_blue{ background:#7EB6D9;}
+#user{ margin:3px 8px 0 2px; text-align:center;border:1px solid #FFFFFF;  background:url(../images_blue/bg_user.gif) 5px 6px no-repeat #FFA11A; height:22px; line-height:22px; color:#FFFFFF;}
+#user a{ color: #000000}
+.table_title{ background:#2B80BB; color:#FFF; font-weight:bold; height:22px; line-height:22px;}
+.bg5 { background:#2B80BB; color:#FFF; font-weight:bold; height:22px; line-height:22px;}
+.table_bg01{ background:#ffffff;}
+.even { background:#ffffff;}
+.odd { background:#EBF7FF;}
+.line{ margin:0.1em;border-bottom-style:solid; border-bottom-width:1px; border-bottom-color:#E5E5E5; }
+.power{ margin:0.1em 0.4em;border-style:solid; border-width:1px; border-color:#CCFFCC;font-size:8px;width:102px;background-color:#EEE; }
+.table_bg02{ background:#EBF7FF;}
+.table_border{ border:1px solid #7EB6D9; margin:0 5px;}
+.help{cursor:pointer;color:#95A8B0}
+
+/* CSS Document */
+body{margin:0px ;padding:0px;font-size:12px;line-height:18px; color:#333333; }
+
+div,p,li{font-family:Verdana,宋体;font-size:12px;}
+form,ul,li,p,h1,h2,h3,h4,h5,h6,p,dd{margin:0;padding:0;}
+h4{ font-size:12px;}
+h5{ font-size:12px;}
+h6{ font-size:12px;display:block;}
+select{font-size:12px;}
+INPUT {BORDER: #C6C6C6 1px solid; FONT: 12px verdana, arial, helvetica, sans-serif;  }
+checkbox {
+	BORDER: #C6C6C6 1px solid;COLOR: #000000;  
+}
+TEXTAREA {
+	BORDER: #666666 1px solid; WIDTH: 430px; 
+}
+INPUT.formTextBox {
+	BORDER: #666666 1px solid; FONT: 11px verdana, arial, helvetica, sans-serif; 
+}
+SELECT {
+	BORDER: #666666 1px solid; FONT: 11px verdana, arial, helvetica, sans-serif;
+}
+img{border:0;}
+ul,li{list-style-type:none;}
+div{overflow:hidden;}
+h4 a{ font-size:13px; font-weight: bold; color:#FFFFFF; }
+h4 a:hover{ font-size:13px; font-weight: bold; color:#F5FFA1; }
+h5 a{ font-size:13px; font-weight: bold; color:#FFFFFF; }
+h5 a:hover{ font-size:13px; font-weight: bold; color:#F5FFA1; }
+a{ color:#0066CC text-decoration:none; font-size:12px;}
+a:hover{ text-decoration:underline; color:#FF6600}
+a:hover{ text-decoration:underline; color:#FF6600}
+
+#color_red{ width:8px; height:8px; display:block; background:#E70000; border:1px solid #FFFFFF; }
+#color_yellow{ width:8px; height:8px; display:block; background:#FF9000; border:1px solid #FFFFFF; }
+#color_blue{ width:8px; height:8px; display:block; background:#2B80BB; border:1px solid #FFFFFF; }
+#color_green{ width:8px; height:8px; display:block; background:#0DBC00; border:1px solid #FFFFFF; }
+#color_pruple{ width:8px; height:8px; display:block; background:#AC55AF; border:1px solid #FFFFFF; }
+#left{ width:126px; float:left;}
+#right{ position: absolute;  top:0;  min-width:878px; width:100%}

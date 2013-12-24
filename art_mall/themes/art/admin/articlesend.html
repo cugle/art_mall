@@ -1,0 +1,303 @@
+{include file="adminheader.html"}  
+<div class="box" style="width:808px">  
+	<form action="" method="post" name="theForm" enctype="multipart/form-data" onsubmit="return validate();">
+	<TABLE width="800" border=0 cellspacing="0" cellpadding="0">
+	  <TR class=bg1>
+		<TD align=left> 
+			<div class="odd"> 
+				 <span style="float: right;"><a href="articlelist.php?{$home.http_var}" style="background-color:#393939;padding: 2px">[返回博客列表To List]</a></span> 
+				 <b>分类选择category:</b>{$home.Stropt}
+				<!-- <b>属性:</b>{$home.Stroptaaid}-->
+			</div>
+
+			<div class="even"> 
+<!--				  <b>标题颜色:</b> 
+				 <SELECT NAME="colors">  
+					  <OPTION VALUE=""  {if $home.work.colors}SELECTED{/if}>默认</OPTION> 
+					  <OPTION VALUE="#FF0000" style="color:#FF0000" {if $home.work.colors=="#FF0000"}SELECTED{/if}>■■■</OPTION> 
+					  <OPTION VALUE="#00FF00" style="color:#00FF00" {if $home.work.colors=="#00FF00"}SELECTED{/if}>■■■</OPTION> 
+					  <OPTION VALUE="#0000FF" style="color:#0000FF" {if $home.work.colors=="#0000FF"}SELECTED{/if}>■■■</OPTION> 
+					  <OPTION VALUE="#000000" style="color:#000000" {if $home.work.colors=="#000000"}SELECTED{/if}>■■■</OPTION> 
+					  <OPTION VALUE="#FF6600" style="color:#FF6600" {if $home.work.colors=="#FF6600"}SELECTED{/if}>■■■</OPTION> 
+					  <OPTION VALUE="#33CC00" style="color:#33CC00" {if $home.work.colors=="#33CC00"}SELECTED{/if}>■■■</OPTION> 
+					  <OPTION VALUE="#0066FF" style="color:#0066FF" {if $home.work.colors=="#0066FF"}SELECTED{/if}>■■■</OPTION> 
+					  <OPTION VALUE="#CC3333" style="color:#CC3333" {if $home.work.colors=="#CC3333"}SELECTED{/if}>■■■</OPTION> 
+					  <OPTION VALUE="#3399FF" style="color:#3399FF" {if $home.work.colors=="#3399FF"}SELECTED{/if}>■■■</OPTION> 
+					  <OPTION VALUE="#CC6666" style="color:#CC6666" {if $home.work.colors=="#CC6666"}SELECTED{/if}>■■■</OPTION> 
+			  </SELECT> -->
+
+				  <b>是否置顶is top:</b> 
+				  <SELECT NAME="top">  
+						<OPTION VALUE="0" {if $home.work.top<1}SELECTED{/if} >否</OPTION> 
+						<OPTION VALUE="1" {if $home.work.top==1}SELECTED{/if} >是</OPTION> 
+				  </SELECT>  
+				 <b>时间date:</b> 
+				 <input type="text" name="arti_date" value="{$home.work.arti_date}" size="19"/>
+		  </div>
+		  <div class="odd">
+				 <b style="color:#F00">新闻标题title:</b>
+				 <input type="text" id="name" name="name" value="{$home.work.name}" size="50"/>
+				 <b>短标题short title:</b>
+				 <input type="text" name="subname" value="{$home.work.subname}" id="status" onkeydown='countChar("status","counter");' onkeyup='countChar("status","counter");'  size="20"/>
+		  </div>
+	 
+			 <div class="even">
+				 <b>来源source:</b>
+				 <input type="text" name="sour" value="{$home.work.sour}" />
+				 <b>来源网址from url:</b>
+				 <input type="text" name="sourhttp" value="{$home.work.sourhttp}" size="46"/>
+			</div>
+			<div class="odd">
+			 <b>缩略图thumb pic:</b>
+			 <input type="file" name="arti_thumb"  style="width:150px"/>
+			 <br />
+			 缩图尺寸thumb size :宽width
+			 <input type="text" name="img_width"  size="2" value="{$nav_w}" />
+			 px
+			 高height
+			 <input type="text" name="img_height"  size="2" value="{$nav_h}"/>
+			 px
+<!--			 <b>同时显示在图库</b> 
+			 <SELECT NAME="ifpic">
+				<OPTION VALUE="0" {if $home.work.ifpic < 1}selected{/if}>否</option>
+				<OPTION VALUE="1" {if $home.work.ifpic == 1}selected{/if}>是</option>
+			 </SELECT>-->
+
+			 <span id="arti_thumb_show">
+				{if $home.work.arti_thumb}
+					  <A HREF="{$domain_url}{$home.work.arti_thumb}" target="_blank"><IMG SRC="{$template_path}images/icon_view.gif" WIDTH="16" HEIGHT="16" BORDER="0" ALT="显示缩图"></A>
+					   _ <a href="javascript:;" onclick="if (confirm('删除')) drop_artitxtImg('{$home.work.arid}','{$home.work.arti_thumb}')"><IMG SRC="{$template_path}images/b_drop.png" WIDTH="16" HEIGHT="16" BORDER="0" ALT="删除缩图"></A>
+					  <input type="hidden" name="old_arti_thumb" value="{$home.work.arti_thumb}" /> 
+					  <input type="hidden" name="old_min_thumb" value="{$home.work.min_thumb}" /> 
+				 {else}
+					  <input type="hidden" name="old_arti_thumb" value="" /> 
+					  <input type="hidden" name="old_min_thumb" value="" /> 
+				 {/if}
+			 </span>
+			</div>
+	 
+			<div class="even">
+				<b><span style="color:#7C7C7C">外部网址Jump to other url:</span></b>
+				<input type="text" name="otherurl" value="{$home.work.otherurl}" size="50"/> 
+		  </div>
+			<div class="odd">
+				<b>摘要abstract:<br />
+				</b>
+				<TEXTAREA NAME="edit_comm" ROWS="2" class="w600">{$home.work.edit_comm}</TEXTAREA>
+		  </div>
+	   </td>
+	 </tr>
+	 </table>
+ 
+	<TABLE width="700" border=0>
+	  <TR class="odd" > 
+		<TD width="750" align="left" > 
+			  <textarea name="descs" style="width:750px;height:400px;visibility:hidden;">{$home.work.descs}</textarea>
+		</TD> 
+	  </TR>	 
+	</TABLE>
+	<!-- 附件 start --> 
+	<DIV id="tabbar-div"></DIV><!-- tab body -->
+	<TABLE id="gallery-table" width="100%" align=center cellspacing="0" cellpadding="0">
+	 <tr>
+	   <td>
+	      新闻相册article picture：(<U>1.点“加号”可以批量上传多张图片click ‘+’ to add more pic；2.点提交按钮提交图片click the button to upload the pic；3.单击相册列表中的缩图，可把原图添加到编辑器中click the thumb to add the big pic to the edit box</U>) 
+		  <div id="delimg_show" style="margin: 0">
+		 <!-- {if $home.work.img_list}-->
+			<!-- {foreach from=$home.work.img_list item=v} -->
+					<div id="gallery_{$v.fileid}" style="float:left; text-align:center; border: 1px solid #DADADA; margin: 4px; padding:2px;">
+					<a href="javascript:;" onclick="if(confirm('删除')) dropImg('{$v.fileid}','{$v.arid}')" title="删除">[-]</a>
+					<a href="{$domain_url}{$v.filename}" target="_blank" title="查看原信息:{$v.descs}">[>]</a>  
+					<br />                
+					<!-- {if $v.thumb_url}--> 
+						<img src="{$domain_url}{$v.thumb_url}" width="{$min_thumb_w}" height="{$min_thumb_h}"  border="0" title="插入编辑器" onclick="insertImg('{$domain_url}{$v.filename}','{$v.descs}')" id="insert{$v.fileid}" /> 
+
+					<!-- {else}--> 
+						<div style="width:{$min_thumb_w}px;height:{$min_thumb_h}px"><br/><br/><a href="{$domain_url}{$v.filename}" target="_blank">查阅>></a></div>
+					<!-- {/if}--> 
+					<br />
+					<input type="text" value="{$v.descs}" size="15" name="old_img_desc[{$v.fileid}]" />
+					</div> 
+			<!-- {/foreach} --> 
+		 <!-- {/if}	-->  
+
+
+		 </div>
+		</TD> 
+	  </TR> 
+	  <TR>
+		<TD>
+		<A onclick=addImg(this) href="javascript:;">[+]</A> 
+		图片描述pic description:
+		<INPUT TYPE="text" NAME=namedesc[] value="" class="w200"/>
+		地址pic :
+		<INPUT type=file name=img_url[] id="fileToUpload" class="w200" >
+		</TD>
+	  </TR>
+	</TABLE>
+
+	  <!-- 附件 end -->
+	<div class="odd">
+		 <b>本文关键词(TAG)：</b>  
+		 <!-- {if $home.work.keys}--> 
+			<!-- {foreach from=$home.work.keys key=k item=v } -->  
+					<input type="text" id="keys[]" name="keys[]" value="{$v}" size="8">
+			<!-- {/foreach} --> 
+		<!-- {else}	-->
+			<input type="text" id="keys[]" name="keys[]" value="" size="8">
+			<input type="text" id="keys[]" name="keys[]" value="" size="8">
+			<input type="text" id="keys[]" name="keys[]" value="" size="8"> 
+		<!-- {/if}	-->  
+
+		 <span style="cursor:pointer;color: #CC0000" onclick="return check_cltion({$home.work.arid})">(依据关键字，搜索)</span> 
+		 <div id="cltion">{$home.work.strCltion}</div> 
+	</div>
+
+	<table width="100%" align=center cellspacing="0" cellpadding="0">
+	  <TR>
+		<TD align=left> 
+		{if $home.work.states < 1}
+		   <input type="submit" name="Submit"  value="{if $home.work.arid}修改提交{else}确认提交{/if}" style="background-color: #FFCC66;margin-left: 50px;margin-top:10px;font-size: 14px"/>
+		   <input type="button" name="clear" value="清空内容" style="background-color: #FFCC66"/> 
+		   <input type="hidden" name="arid" value="{if $home.work.arid >0}{$home.work.arid}{else}0{/if}" id="arid" /> 
+		   <input type="hidden" name="act" value="{if $home.work.arid >0}update{else}insert{/if}" />  
+		   <input type="hidden" name="states" value="{if $home.work.arid >0}{$home.work.states}{else}0{/if}" />
+		   <input type="hidden" name="sort_by" value="{$home.work.sort_by}" />
+		   <input type="hidden" name="start_time" value="{$home.start_time}" />
+		   <input type="hidden" name="end_time" value="{$home.end_time}" />
+		   <input type="hidden" name="dateadd" value="{$home.dateadd}" />
+		   <input type="hidden" name="sear_name" value="{$home.sear_name}" />
+		{/if}
+		</TD> 
+	  </TR> 
+<!--	  <TR>
+		  <TD> {$home.vt_name} </TD>
+	  </TR>-->
+	 </table>
+	</form> 
+</div>
+<script charset="utf-8" src="{$domain_url}kindeditor/kindeditor-min.js"></script>
+<script charset="utf-8" src="{$domain_url}kindeditor/lang/zh_CN.js"></script>
+
+<SCRIPT src=".\/js/tab.js" type="text/javascript"></SCRIPT>
+<SCRIPT src=".\/js/utils.js" type="text/javascript"></SCRIPT>	
+<SCRIPT src="{$domain_url}js/ajax.js" type="text/javascript"></SCRIPT>
+<!--以下的两个script为添加的ajax上传-->
+<SCRIPT language=JavaScript> 
+{literal}
+	function addImg(obj) {
+		var src  = obj.parentNode.parentNode;
+		var idx  = rowindex(src);
+		var tbl  = document.getElementById('gallery-table');
+		var row  = tbl.insertRow(idx + 1);
+		var cell = row.insertCell(-1);
+		cell.innerHTML = src.cells[0].innerHTML.replace(/(.*)(addImg)(.*)(\[)(\+)/i, "$1removeImg$3$4-");
+	} 
+	/**
+	* ~{I>3}M<F,IO4+~}
+	*/
+	function removeImg(obj) {
+		var row = rowindex(obj.parentNode.parentNode);
+		var tbl = document.getElementById('gallery-table'); 
+		tbl.deleteRow(row);
+	} 
+	/**
+	* ~{I>3}M<F,~}
+	*/
+	function dropImg(fileid,arid) {
+		obj = "delimg_show";
+		var strTemp = "ajax_arti_delimg.php?fileid=" + fileid + "&arid=" + arid + "&op=delimg&action=edit"; 
+		send_request(strTemp);	
+	}
+
+	function drop_artitxtImg(arid,arti_thumb_file) {
+		obj = "arti_thumb_show";
+		var strTemp = "ajax_arti_delimg.php?arid=" + arid + "&arti_thumb_file=" + arti_thumb_file;
+		//alert(strTemp);
+		send_request(strTemp);	
+	}
+
+	function check_cltion(arid) {
+		obj = "cltion";
+		var objs = document.getElementsByName("keys[]");
+		for(var i=0;i<objs.length;i++){ 
+			var v = objs[i].value; 
+			if( i < 1)   var keys0 = v; 
+			if( i == 1)  var keys1 = v; 
+			if( i == 2)  var keys2 = v; 
+		}  
+		var strTemp = "ajax_check_cltion.php?keys0=" + escape(keys0) + "&keys1=" + escape(keys1) + "&keys2=" + escape(keys2) + "&arid=" + arid; 
+		send_request( strTemp );
+	} 
+
+	function list_help(a,b)  {
+		obj = b; 
+		var strTemp = "help.php?value=" + a ; 
+		send_request(strTemp);
+	}
+
+	function style_display(a) {   obj = a; 
+	   document.getElementById(obj).innerHTML="";
+	}
+
+	function countChar(textareaName,spanName) {   
+		document.getElementById(spanName).innerHTML =  document.getElementById(textareaName).value.length; 
+	}   
+ 
+	function validate() {
+		var frm          = document.forms['theForm'];
+		var name = document.getElementById("name").value;  
+
+		var msg = '';
+		var reg = null;
+
+		if( name.length < 4) {
+			msg += '请输入新闻标题' + '\n';
+		} 
+		if (msg.length > 0) {
+			alert(msg);
+			return false;
+		}  else {
+			return true;
+		}
+	}  
+
+	var editor;
+	KindEditor.ready(function(K) {  
+		editor = K.create('textarea[name="descs"]', {
+			cssPath : '{$domain_url}kindeditor/plugins/code/prettify.css',
+			uploadJson : '{$domain_url}upload_json.php?jsonop=descs&arid={$home.work.arid}',
+			fileManagerJson : '{$domain_url}upload_manager_json.php?jsonop=descs&arid={$home.work.arid}',
+			allowFileManager : false,
+            width : '750px',
+            height: '500px',
+			resizeType: 0,
+			items:['source', '|', 'undo', 'redo', '|', 'preview', 'print', 'template', 'code', 'cut', 'copy', 'paste','plainpaste', 'wordpaste', '|', 'justifyleft', 'justifycenter', 'justifyright','justifyfull', 'insertorderedlist', 'insertunorderedlist', 'indent', 'outdent', 'subscript','superscript', 'clearhtml', 'quickformat', 'selectall', '|', 'fullscreen', '/','formatblock', 'fontname', 'fontsize', '|', 'forecolor', 'hilitecolor', 'bold','italic', 'underline', 'strikethrough', 'lineheight', 'removeformat', '|', 'image','flash', 'media', 'insertfile', 'table', 'hr', 'emoticons', 'baidumap', 'pagebreak','anchor', 'link', 'unlink'],
+
+			afterCreate : function() {
+				var self = this;
+				K.ctrl(document, 13, function() {
+					self.sync();
+					K('form[name=theForm]')[0].submit();
+				});
+				K.ctrl(self.edit.doc, 13, function() {
+					self.sync();
+					K('form[name=theForm]')[0].submit();
+				});
+			} 
+		}); 
+		K('input[name=clear]').click(function(e) {
+			editor.html('');
+		}); 
+ 
+	}); 
+	function insertImg(value,b) {  
+		editor.focus();  
+		var str = '<IMG SRC="' + value + '"  BORDER="0" ALT="' + b + '">';
+		editor.insertHtml( str ); 
+	} 
+
+
+{/literal}
+</SCRIPT>  
+{include file="adminfooter.html"} 

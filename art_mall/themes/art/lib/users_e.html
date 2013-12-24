@@ -1,0 +1,62 @@
+							<FORM action="" method="post" name="theForm">
+								<li style="margin:5px;width:420px;clear:left">
+									<div class="user">帐号：</div>
+									<div style="width:150px;float:left">{$home.user.user_name}</div>
+								</li> 
+								<li style="margin:5px;width:420px;clear:left">
+									<div class="user">EMAIL：</div> 
+									<div style="width:150px;float:left"><INPUT TYPE="text"  NAME="email" value="{$home.user.email}" style="width:150px"></div>
+								</li> 
+								<!-- sex birthday  qq mobile_phone addrs userhttp usertag -->
+								<li style="margin:5px;width:420px;clear:left">
+									<div class="user">性别：</div> 
+									<div style="width:150px;float:left"> 
+									<INPUT TYPE="radio" NAME="sex" value="0" {if $home.user.sex < 1}checked{/if}>男
+									<INPUT TYPE="radio" NAME="sex" value="1" {if $home.user.sex == 1}checked{/if}>女
+									</div>
+								</li>  	
+								<li style="margin:5px;width:420px;clear:left">
+									<div class="user">生日：</div>
+									<div style="width:150px;float:left">
+										<INPUT TYPE="text"  NAME="birthday" value="{$home.user.birthday}" style="width:100px">  
+									</div>
+								</li> 
+								<li style="margin:5px;width:420px;clear:left">
+									<div class="user">QQ：</div>
+									<div style="width:150px;float:left">
+										<INPUT TYPE="text"  NAME="qq" value="{$home.user.qq}" style="width:100px">  
+									</div>
+								</li>  
+								<li style="margin:5px;width:420px;clear:left">
+									<div class="user">手机：</div>
+									<div style="width:150px;float:left">
+										<INPUT TYPE="text"  NAME="mobile_phone" value="{$home.user.mobile_phone}" style="width:100px">  
+									</div>
+								</li>  								
+								<li style="margin:5px;width:420px;clear:left">
+									<div class="user">地址：</div> 
+									<div style="width:250px;float:left">
+										<INPUT TYPE="text"  NAME="addrs" value="{$home.user.addrs}" style="width:250px"> 
+									</div>
+								</li>  
+								<li style="margin:5px;width:420px;clear:left">
+									<div class="user">主页：</div> 
+									<div style="width:150px;float:left">
+										<INPUT TYPE="text"  NAME="userhttp" value="{$home.user.userhttp}" style="width:150px"> 
+									</div>
+								</li>  	
+								<li style="margin:5px;width:420px;clear:left">
+									<div class="user">个人标签：</div>
+									<div style="width:250px;float:left">
+										<INPUT TYPE="text"  NAME="usertag" value="{$home.user.usertag}" style="width:250px">
+									</div>
+								</li> 								
+							<li style="margin:5px;width:420px;clear:left">
+								<div class="user">&nbsp;</div>
+								<div style="width:300px;float:left;margin:5px;0 10px 0">
+									<INPUT TYPE="submit" value="修改基本资料"> 
+									<INPUT TYPE="hidden" name="o" value="{$home.user_e}"> 
+								</div>
+							</li> 
+						    </form>
+							<div class="clear"></div> 

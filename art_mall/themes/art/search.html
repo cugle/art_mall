@@ -1,0 +1,125 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>{$header_title}|{$title}</title> 
+	<meta name="description" content="{$description}">
+	<meta name="keywords" content="{$keywords}">  
+<link href="{$template_path}css/css.css" rel="stylesheet" type="text/css" />
+<link href="{$template_path}css/menu.css" rel="stylesheet" type="text/css" />
+<script language="javascript" type="text/javascript" src="{$template_path}js/jquery-1.4.2.js"></script>
+<script language="javascript" type="text/javascript" src="{$template_path}js/menu.js"></script>
+<style>
+
+body{
+	padding:0;
+	height: 90px;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 0;
+	margin-left: 0px;
+}
+
+img{ border:0}
+
+#container{ text-align:center}
+
+#container .cell{ padding:5px 5px 0; border:1px solid #E3E3E3; background:#F5F5F5; margin-top:10px}
+
+#container p{ line-height:20px; margin-top:5px}
+a:link {
+	color: #000000;
+	text-decoration: none;
+}
+a:visited {
+	text-decoration: none;
+	color: #000000;
+}
+a:hover {
+	text-decoration: none;
+	color: #000000;
+}
+a:active {
+	text-decoration: none;
+	color: #000000;
+}
+#w900_2 {
+	width: 880px;
+	margin-right: auto;
+	margin-left: auto;
+}
+
+</style>
+ 
+</head>
+
+<body>
+{include file="header.html"}
+<div class="main">  
+<div class="mainbody"> 
+<DIV id=m_right>
+<DIV id=p_title>
+	<div class="top"><ul><div class="top"><ul>{$home.nowNave}</ul></div></ul></div>
+	<DIV class=p_right>
+	</DIV>
+</DIV>
+<DIV id=list>
+
+	<FORM METHOD="POST" ACTION="search.php" style="margin: 0 0 0 25px" >  
+		<div style="font-weight: bold;float:left;color:#F00">搜索：</div>
+		<div style="float:left" ><input type="text" name="name" title="站内搜索" id="searname" /></div>
+ 
+		<div class="stype"   style="float:left" >
+			<SELECT NAME="stype" id="stype">
+				<OPTION VALUE="1" {$home.stype1}>blog</OPTION>
+				<OPTION VALUE="2" {$home.stype2}>art</OPTION>
+				<OPTION VALUE="3" {$home.stype3}>other</OPTION> 
+			</SELECT>
+		</div> 
+
+		<div style="float:left" ><input type="image" src="{$template_path}images/go.jpg"  title="站内搜索"/></div>
+	</FORM>
+
+	<div class="line"></div>
+	<UL style="float:left;clear:both">
+	{if $home.stype == 1}
+		
+		{if $home.articles} 
+			<!-- {foreach from=$home.articles item=articles} -->
+				  <LI style="height:24px;">
+					  <SPAN>[{$articles.arti_date}]</SPAN>
+					  <a href="{$articles.article_url}" target="_blank"> {$articles.name}</a> 
+				  </LI>  
+			<!-- {/foreach} --> 
+		{else}
+			<li>暂无新闻内容</li>
+		{/if}
+ 
+	{elseif $home.stype == 2} 
+
+		 
+			{if $home.products}
+				<!-- {foreach from=$home.products item=products} -->  
+				  <LI style="float:left; width:200px; height:200px; margin:10px">
+		  <SPAN class=pic><a href="{$products.product_url}"><img SRC="{$products.min_thumb}"   WIDTH="150" HEIGHT="150" BORDER="0"></a></SPAN>
+		  <SPAN class=title><A HREF="{$products.product_url}">{$products.name}</A></SPAN> 
+		  <SPAN >{if $products.pcname}<A HREF="{$products.pcname_url}">[{$products.pcname}]</A>{/if}</SPAN>  
+				  </LI>
+				<!-- {/foreach} -->  
+			{else}
+				<li>此查询条件下无商品</li>
+			{/if} 
+		
+	{elseif $home.stype == 3}
+
+	{/if}
+	</UL>
+</DIV>
+<DIV id=page>
+<div class="fenye" >{$home.showpage}</div> 
+</DIV></DIV>
+</div>
+</div>
+{include file="footer.html"} 
+</body>
+</html>

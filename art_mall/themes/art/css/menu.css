@@ -1,0 +1,65 @@
+@charset "utf-8";
+/* CSS Document */
+html, body, ul, li {padding:0; margin:0;}
+body {font:12px/normal Verdana, Arial, Helvetica, sans-serif;}
+ul,li {list-style-type:none; text-transform:capitalize;}
+.clear {clear:both; *display:inline;/*IE only*/}
+
+/*menu*/
+#menu {
+	display:block;
+	height:34px;
+	margin-top: 0px;
+	margin-right: auto;
+	margin-bottom: 30px;
+	margin-left: auto;
+	float: left;
+}
+#nav {display:block;}
+#nav .mainlevel {
+	float:left;
+	text-align:center;
+	display:block;
+	padding-top: 10px;
+	padding-left: 15px;
+	height: 53px;
+}
+#nav .mainlevel a {color:#fff; text-decoration:none; line-height:53px; height:53px; text-align:center; padding:0; display:block; _width:48px;}
+#nav .mainlevel a:hover {
+	color:#3f240e;
+	text-decoration:none;
+	background-color: #CCCCCC;
+	background-position: 0 0;
+}
+#nav .mainlevel ul {
+	position:absolute;
+	display:none;
+
+*width:2000px;
+	float: left;
+}
+#nav .mainlevel li {float:left; background:#c8c8c8;}
+#nav .mainlevel li a {padding:0 12px; line-height:24px; height:24px; display:block; _padding-bottom:6px;/*IE6 only*/}
+#nav .mainlevel li a:hover {
+	color:#fff;
+	text-decoration:none;
+	background-color: #949494;
+}
+#nav li a em/*input an em tag as a space 一流素材网www.16sucai.com*/ {padding:0 3px;}
+.note {
+	color:#3f240e;
+	border-right:1px solid #fff;
+	display:block;
+	line-height:34px;
+	padding:0;
+	background-image: none;
+	background-repeat: repeat-x;
+	background-position: 0 0;
+}
+.Triangle_con {height:9px; background:url(../images/bird.png) 36px 0 no-repeat; display:block; _margin-bottom:-6px;/*IE6 only*/}
+.log {margin:100px auto; width:1000px; text-transform:capitalize; line-height:200%;}
+.sub_nav_01 {
+padding-top:5px;
+
+	margin-left: 0px;
+}

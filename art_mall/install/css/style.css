@@ -1,0 +1,150 @@
+HTML {
+	SCROLLBAR-FACE-COLOR: #eeeeee; SCROLLBAR-HIGHLIGHT-COLOR: #ffffff; SCROLLBAR-SHADOW-COLOR: #d5d5d5; SCROLLBAR-3DLIGHT-COLOR: #000000; SCROLLBAR-ARROW-COLOR: #000000; SCROLLBAR-TRACK-COLOR: #ffffff; SCROLLBAR-DARKSHADOW-COLOR: #000000
+}
+BODY {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; FONT-SIZE: 12px; PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-TOP: 0px; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; BACKGROUND-COLOR: transparent
+}
+IMG {
+	BORDER-TOP-STYLE: none; BORDER-RIGHT-STYLE: none; BORDER-LEFT-STYLE: none; BORDER-BOTTOM-STYLE: none
+}
+HR {
+	BORDER-RIGHT: #e18a00 3px solid; BORDER-TOP: #e18a00 3px solid; BORDER-LEFT: #e18a00 3px solid; WIDTH: 95%; BORDER-BOTTOM: #e18a00 3px solid; HEIGHT: 3px
+}
+UL {
+	PADDING-RIGHT: 2px; PADDING-LEFT: 2px; LIST-STYLE-POSITION: inside; PADDING-BOTTOM: 2px; MARGIN: 2px; PADDING-TOP: 2px; LIST-STYLE-TYPE: decimal; TEXT-ALIGN: left
+}
+LI {
+	LIST-STYLE-POSITION: inside; MARGIN-LEFT: 2px; COLOR: #000000; LIST-STYLE-TYPE: square
+}
+H1 {
+	FONT-SIZE: 20px
+}
+H2 {
+	FONT-SIZE: 18px
+}
+H3 {
+	FONT-SIZE: 16px
+}
+H4 {
+	FONT-SIZE: 14px
+}
+TH {
+	PADDING-RIGHT: 2px; PADDING-LEFT: 2px; PADDING-BOTTOM: 2px; VERTICAL-ALIGN: middle; COLOR: #ffffff; PADDING-TOP: 2px; BACKGROUND-COLOR: #2f5376
+}
+A:link {
+	FONT-WEIGHT: bold; COLOR: #66CCFF; BACKGROUND-COLOR: transparent; TEXT-DECORATION: none
+}
+A:visited {
+	FONT-WEIGHT: bold; COLOR: #66CCFF; BACKGROUND-COLOR: transparent; TEXT-DECORATION: none
+}
+A:hover {
+	FONT-WEIGHT: bold; COLOR: #ff9966; BACKGROUND-COLOR: transparent; TEXT-DECORATION: none
+}
+DIV.xoopsCode {
+	BORDER-RIGHT: #c2cdd6 1px dashed; BORDER-TOP: #c2cdd6 1px dashed; FONT-SIZE: 11px; BORDER-LEFT: #c2cdd6 1px dashed; COLOR: #006600; BORDER-BOTTOM: #c2cdd6 1px dashed; BACKGROUND-COLOR: #fafafa
+}
+DIV.xoopsQuote {
+	BORDER-RIGHT: #c2cdd6 1px dashed; BORDER-TOP: #c2cdd6 1px dashed; FONT-SIZE: 11px; BORDER-LEFT: #c2cdd6 1px dashed; COLOR: #444444; LINE-HEIGHT: 125%; BORDER-BOTTOM: #c2cdd6 1px dashed; BACKGROUND-COLOR: #fafafa; TEXT-ALIGN: justify
+}
+DIV.xoopsQuote A:link {
+	FONT-WEIGHT: bold; COLOR: #444444; BACKGROUND-COLOR: transparent
+}
+DIV.xoopsQuote A:visited {
+	FONT-WEIGHT: bold; COLOR: #444444; BACKGROUND-COLOR: transparent
+}
+DIV.xoopsQuote A:hover {
+	COLOR: #1778cb; BACKGROUND-COLOR: transparent
+}
+DIV.xoopsQuote A:active {
+	COLOR: #1778cb; BACKGROUND-COLOR: transparent
+}
+DIV.errorMsg {
+	BORDER-RIGHT: #aaaaaa 1px solid; PADDING-RIGHT: 10px; BORDER-TOP: #ddddff 1px solid; PADDING-LEFT: 10px; FONT-WEIGHT: bold; PADDING-BOTTOM: 10px; BORDER-LEFT: #ddddff 1px solid; COLOR: white; PADDING-TOP: 10px; BORDER-BOTTOM: #aaaaaa 1px solid; BACKGROUND-COLOR: #ff3737; TEXT-ALIGN: center
+}
+DIV.confirmMsg {
+	BORDER-RIGHT: #aaaaaa 1px solid; BORDER-TOP: #ddddff 1px solid; FONT-WEIGHT: bold; BORDER-LEFT: #ddddff 1px solid; COLOR: #136c99; BORDER-BOTTOM: #aaaaaa 1px solid; BACKGROUND-COLOR: #ddffdf; TEXT-ALIGN: center
+}
+.fontSmall {
+	FONT-SIZE: 10px; BACKGROUND-COLOR: transparent
+}
+A.fontSmall {
+	COLOR: #006699
+}
+A.fontSmall:hover {
+	COLOR: #c23030; TEXT-DECORATION: underline
+}
+INPUT {
+	BORDER-RIGHT: #000000 1px solid; BORDER-TOP: #000000 1px solid; FONT: 11px verdana, arial, helvetica, sans-serif; BORDER-LEFT: #000000 1px solid; COLOR: #000000; BORDER-BOTTOM: #000000 1px solid; BACKGROUND-COLOR: #ffffff
+}
+checkbox {
+	BORDER-RIGHT: #000000 0px solid;  BORDER-LEFT: #000000 0px solid; COLOR: #000000; BORDER-BOTTOM: #000000 0px solid; BACKGROUND-COLOR: #ffffff
+}
+TEXTAREA {
+	BORDER-RIGHT: #000000 1px solid; BORDER-TOP: #000000 1px solid; FONT: 11px verdana, arial, helvetica, sans-serif; BORDER-LEFT: #000000 1px solid; WIDTH: 430px; BORDER-BOTTOM: #000000 1px solid
+}
+INPUT.formTextBox {
+	BORDER-RIGHT: #000000 1px solid; BORDER-TOP: #000000 1px solid; BACKGROUND: #ffffff; FONT: 11px verdana, arial, helvetica, sans-serif; BORDER-LEFT: #000000 1px solid; BORDER-BOTTOM: #000000 1px solid
+}
+SELECT {
+	BORDER-RIGHT: #000000 1px solid; BORDER-TOP: #000000 1px solid; FONT: 11px verdana, arial, helvetica, sans-serif; BORDER-LEFT: #000000 0px solid; BORDER-BOTTOM: #000000 0px solid
+}
+DIV.content {
+	PADDING-RIGHT: 15px; PADDING-LEFT: 15px; PADDING-BOTTOM: 0px; PADDING-TOP: 0px; TEXT-ALIGN: left
+}
+.xoopsCenter {
+	TEXT-ALIGN: center
+}
+.bg1 {
+	BACKGROUND-COLOR: #e6e6e6
+}
+.bg2 {
+	BACKGROUND-COLOR: #2f5376
+}
+.bg3 {
+	COLOR: #ffffff; BACKGROUND-COLOR: #2f5376
+}
+.bg4 {
+	BACKGROUND-COLOR: #ececec
+}
+.bg5 {
+	BACKGROUND-COLOR: #CCCC66
+}
+.bg7 {
+	COLOR: #ffffff;  BACKGROUND-COLOR: #1f5376
+}
+.outer {
+	BORDER-RIGHT: silver 1px solid; BORDER-TOP: silver 1px solid; BORDER-LEFT: silver 1px solid; BORDER-BOTTOM: silver 1px solid
+}
+.head {
+	PADDING-RIGHT: 5px; PADDING-LEFT: 5px; FONT-WEIGHT: bold; PADDING-BOTTOM: 5px; PADDING-TOP: 5px; BACKGROUND-COLOR: #c2cdd6
+}
+.xoopshead {
+	PADDING-RIGHT: 5px; PADDING-LEFT: 5px; FONT-WEIGHT: bold; PADDING-BOTTOM: 5px; PADDING-TOP: 5px; BACKGROUND-COLOR: #c2cdd6
+}
+.even {
+	PADDING-RIGHT: 5px; PADDING-LEFT: 5px; PADDING-BOTTOM: 5px; PADDING-TOP: 5px; BACKGROUND-COLOR: #dee3e7
+}
+.odd {
+	PADDING-RIGHT: 5px; PADDING-LEFT: 5px; PADDING-BOTTOM: 5px; PADDING-TOP: 5px; BACKGROUND-COLOR: #e6e6e6
+}
+.foot {
+	PADDING-RIGHT: 5px; PADDING-LEFT: 5px; FONT-WEIGHT: bold; PADDING-BOTTOM: 5px; PADDING-TOP: 5px; BACKGROUND-COLOR: #c2cdd6
+}
+TR.head TD {
+	PADDING-RIGHT: 5px; PADDING-LEFT: 5px; FONT-WEIGHT: bold; PADDING-BOTTOM: 5px; PADDING-TOP: 5px; BACKGROUND-COLOR: #c2cdd6
+}
+TR.even TD {
+	PADDING-RIGHT: 5px; PADDING-LEFT: 5px; PADDING-BOTTOM: 5px; PADDING-TOP: 5px; BACKGROUND-COLOR: #dee3e7
+}
+TR.odd TD {
+	PADDING-RIGHT: 5px; PADDING-LEFT: 5px; PADDING-BOTTOM: 5px; PADDING-TOP: 5px; BACKGROUND-COLOR: #e6e6e6
+}
+TR.foot TD {
+	PADDING-RIGHT: 5px; PADDING-LEFT: 5px; FONT-WEIGHT: bold; PADDING-BOTTOM: 5px; PADDING-TOP: 5px; BACKGROUND-COLOR: #c2cdd6
+}
+.TR{
+   FONT-SIZE: 12px;
+}
+.TD{
+   FONT-SIZE: 12px;
+}

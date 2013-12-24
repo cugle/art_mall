@@ -1,0 +1,145 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>{$header_title}|{$title}</title> 
+	<meta name="description" content="{$description}">
+	<meta name="keywords" content="{$keywords}">  
+<link href="{$template_path}css/css.css" rel="stylesheet" type="text/css" />
+<link href="{$template_path}css/menu.css" rel="stylesheet" type="text/css" />
+<script language="javascript" type="text/javascript" src="{$template_path}js/jquery-1.4.2.js"></script>
+<script language="javascript" type="text/javascript" src="{$template_path}js/menu.js"></script>
+<style>
+
+body{
+	padding:0;
+	height: 90px;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 0;
+	margin-left: 0px;
+}
+
+img{ border:0}
+
+#container{ text-align:center}
+
+#container .cell{ padding:5px 5px 0; border:1px solid #E3E3E3; background:#F5F5F5; margin-top:10px}
+
+#container p{ line-height:20px; margin-top:5px}
+a:link {
+	color: #000000;
+	text-decoration: none;
+}
+a:visited {
+	text-decoration: none;
+	color: #000000;
+}
+a:hover {
+	text-decoration: none;
+	color: #000000;
+}
+a:active {
+	text-decoration: none;
+	color: #000000;
+}
+#w900_2 {
+	width: 880px;
+	margin-right: auto;
+	margin-left: auto;
+}
+</style>
+ 
+</head>
+
+<body>
+{include file="header.html"}
+<div class="main">  
+<div class="mainbody"> 
+<div id="w900_2">	 
+	
+	<div class="right_nr">
+		<div class="top"><ul><div class="top"><ul>{$home.nowNave}</ul></div></ul></div>
+		<Div class="mcontent" style="float: left;clear: left;">
+
+						<form METHOD=POST ACTION="" style="margin:10px;padding: 5px">
+
+					<div class="yuyuetable">
+
+						<table width="109%" border="0" cellspacing="0" cellpadding="0">
+
+							  <tr>
+
+								<td class="td1">name 姓名 ： 	</td>
+
+								<td ><input name="name"  class="nameput" type="text" size="10" value="" />
+
+							    <span class="red">*</span></td>
+							  </tr>
+
+							  <tr>
+
+								<td class="td1">email 邮箱 ：</td>
+
+								<td><input type="text" class="nameput" name="email" size="20" /></td>
+							  </tr>
+
+							  <tr>
+
+								<td class="td1">subject 主题 ：</td>
+
+								<td><input name="addrs" class="nameput" type="text" size="40" value="" /></td>
+							  </tr>
+
+							  <tr>
+
+								<td class="td1">message内容 ：</td>
+
+								<td><textarea name="descs" cols="40" rows="5" class="textarea" id="descs"></textarea></td>
+							  </tr>
+
+							   <tr>
+
+								<td class="td1">code 验证码：</td>
+
+								<td><input name="vcode"   type="text" size="7" value="" onfocus="loadvcode();" /><span id="span_img"></span> </td>
+							  </tr>
+					  </table>
+
+					</div>
+
+					<div class="submitput"><input type="submit" value="提交 send" name="submit" /> <input type="button" value="重置 reset" onclick="qx();" />
+
+						<INPUT TYPE="hidden" NAME="act" value="install">	
+
+					</div>
+
+				</form>
+
+
+
+					</Div>
+		<div  style="float: right; padding-right:50px">
+			{$notices}
+		</div>
+	</div> 
+</div>
+</div>
+</div>
+{include file="footer.html"} 
+<script language="JavaScript">
+
+  {literal}  
+
+	function loadvcode() {
+
+		document.getElementById('span_img').innerHTML="<img src=\"{$domain_url}vcode.php\" alt=\"点击刷新验证码\" onclick=\"document.getElementById('vcode').src='{$domain_url}vcode.php?'+Math.random();\" style=\"cursor:pointer;width:65px;height:18px;\" id=\"vcode\" align=\"absmiddle\" />";
+
+	}
+
+   {/literal} 
+
+</script> 
+
+</body>
+</html>

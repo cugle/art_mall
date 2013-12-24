@@ -1,0 +1,69 @@
+行业之星 免费 开源 多用户企业自助建站系统 
+版本 V1.2版本号：OSUNIT_V1.2.130515。
+
+行业之星网站服务系统功能特色：
+1.多用户自助建站系统(用户可申请自己独立的域名）
+2.日常维护栏目及导航条能完全自定义
+3.网站模板可编辑修改
+4.支持伪静态（需要apache环境）
+5.TAG关联文章与产品
+6.文章关联调查
+7.产品经销商历史报价记录
+8.经销商网站
+9.品牌列表
+10.支持代理商推广建站
+11.图库功能
+12.其它常规CMS功能：留言评论、顶踩、转发、图库方式、
+
+安装方法：
+
+1.上传文件到你需要安装的目录
+2.如果是linux系统修改
+config.inc.php 为 777 权限
+下列目录为777权限:
+ images     777
+ templates  777
+ themes     777
+ data       777 
+3.执行简易安装程序： http://******/install
+
+4.linux 安装结束后修改 data/config.inc.php 为 744 权限
+
+5.如果要起用伪静态，请对应修改 .htaccess文件对应的程序目录名
+==========================================
+apache 启用伪静态的方法：
+1.检查apache 的配置文件httpd.conf
+#LoadModule rewrite_module modules/mod_rewrite.so
+修改为：
+LoadModule rewrite_module modules/mod_rewrite.so
+2.虚拟主机
+<VirtualHost *:80>
+    ServerAdmin xy58@qq.com
+    DocumentRoot "e:/test"
+    ServerName www.test.com
+    ServerAlias *.test.com
+	<Directory "e:/test"> 
+	    Options Indexes FollowSymLinks 
+	    AllowOverride All 
+	    Order allow,deny
+	    Allow from all 
+	</Directory> 
+</VirtualHost>
+==================== 
+
+其它说明：
+1.运行环境：php5+mysql
+2.字符集编码：utf8
+3.配置文件为： data/config.inc.php
+4.模板目录    themes
+
+
+* 项目介绍：http://www.osunit.com/about.php  
+
+
+* ----------------------------------------------------------------------------
+* osunit 版权所有xufyong@gmail.com，并保留所有权利。
+* 网站地址: http://www.osunit.com
+* ----------------------------------------------------------------------------
+* 这是一个免费开源的软件；您可以在不用于商业目的的前提下对程序代码,进行修改、使用和再发布。
+* 技术支持,合作联系,并提供二次开发：QQ:16953292

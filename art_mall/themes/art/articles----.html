@@ -1,0 +1,23 @@
+{include file="header.html"} 
+
+<div id="w900_2">	 
+  {include file="left.html"} 
+  <div class="right_nr">
+	  <div class="top"><ul>{$home.nowNave}</ul></div>
+			<div class="nr"> 
+				<ul> 
+				<!-- {foreach from=$home.Tarticles  item=articles} -->
+						<li><span style="float:right;width:150px;">{$articles.arti_date}</span>·{if $articles.acname}[<a href="{$articles.acname_url}" style="color:#0080FF">{$articles.acname}</a>]{/if}
+						<a href="{$articles.article_url}"> {$articles.name}</a> </li>
+				<!-- {/foreach} --> 
+
+					{if $home.showpage}
+						<li class="fenye" >{$home.showpage}</li> 
+					{/if} 
+				</ul>
+
+ 
+			</div>
+	  </div>
+</div>
+{include file="footer.html"} 

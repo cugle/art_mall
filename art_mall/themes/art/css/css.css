@@ -1,0 +1,239 @@
+body {
+	margin-left: 0px;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+}
+.main {
+	position:static;
+	bottom:0px;
+	left:1px;
+	width:885px;
+	height:auto;
+
+	z-index:1;
+	background:#FFF;
+	margin-right: auto;
+	margin-left: auto;
+}
+#ToolBar {
+	bottom:0px;
+	width:100%;
+	height:75px;
+	text-align:center;
+	background:#ccc;
+	z-index:100;
+	overflow:hidden;
+	filter:alpha(Opacity=90);
+
+-moz-opacity:0.8;
+	opacity: 0.8;
+	background-color:#000;
+	position: fixed;
+}
+.header {
+	height: 120px;
+	width: 900px;
+	margin-top: 15px;
+	margin-right: auto;
+	margin-left: auto;
+}
+.main .footer {
+	height: 75px;
+	width: 100%;
+	float: left;
+}
+.main .header .munu li {
+	float: left;
+	list-style-type: none;
+	width: 110px;
+}
+.main .header .logo {
+	float: left;
+}
+.main .header .munu ul {
+	float: left;
+	padding-top: 15px;
+	padding-left: 50px;
+}
+.main .mainbody .flashbanner {
+	float: left;
+	width: 687px;
+}
+.main .mainbody .logindiv {
+	float: left;
+	height: 265px;
+	width: 193px;
+	background-color: #000000;
+}
+.main .mainbody .maincontent {
+	float: left;
+	width: 100%;
+}
+#ToolBar li {
+	float: left;
+	width: 100px;
+	list-style-type: none;
+}
+#ToolBar ul {
+	padding: 0px;
+	width: 940px;
+	margin-top: 0px;
+	margin-right: auto;
+	margin-bottom: 0px;
+	margin-left: auto;
+}
+.searchinput {
+	background-image: url(../images/searchinputbg.jpg);
+	height: 25px;
+	width: 99px;
+ 
+	right: 85px;
+	border: medium none;
+	color: #FFFFFF;
+	float:left;
+}
+.searchdiv{
+padding-left:15px;
+}
+.searchdiv #search_goods {
+	background-image: url(../images/searchbtn.jpg);
+	height: 27px;
+	width: 65px;
+ 
+	right: 20px;
+	display:block;
+	float:left;
+}
+.cartlist {
+	color: #FFFFFF;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	margin-left: 5px;
+	border: 1px solid dddbdc;
+	float:left;
+}
+.cartlist  a:link{
+	color: #FFFFFF;
+}
+.logo {
+	float: left;
+}
+.cell .cellimg {
+	background-color: #FFFFFF;
+	padding-bottom: 1px;
+}
+.cell .celltitle {
+	text-align: left;
+	font-weight: bold;
+}
+.cell .celltext {
+	text-align: left;
+}
+.main .mainbody .top li {
+text-align: center;
+float: left;
+height: 22px;
+line-height: 22px;
+margin-right: 5px;
+}
+.main .mainbody .maincontent .pline3 .row1 {
+	float: left;
+}
+.main .mainbody .maincontent .pline3{
+	float: right;
+	width:400px;
+
+}
+
+.main .mainbody .maincontent .pline4{
+	float: right;
+	width:440px;
+	padding-left:0px;
+
+	padding-right:20px;
+}
+.main .mainbody .maincontent .pline4 .brandproduct{
+	width:400px;
+	height:305px;
+	padding-left:20px
+}
+.main .mainbody .maincontent .pline4 .pline5{
+	float: left;
+	width:300px;
+	height:40px;
+	
+}
+.main .mainbody .maincontent .pline3 #div1 .pc1{
+height:100px;
+
+}
+.pline6{
+position:absolute;
+background-color:#b1b1b1;
+color:#FFFFFF;
+float: left;
+width:440px;
+padding-bottom:100px;
+}
+.pline7{
+float: left;
+width:400px;
+}
+.pline6 a:link{
+color:#FFFFFF;
+
+}
+
+.main .mainbody .maincontent .pline3 #div1 #buy { 
+float: right;
+clear:both;
+	z-index: 99;
+	width: 400px;
+	height: 50px;
+	background-image: url("../images/buy_bj.gif");
+	padding-left: 5px;
+	display: none;
+}
+.main .mainbody .maincontent .pline3 #div1 .pc1 {
+	float: right;
+	 
+	z-index: 99;
+	width: 400px;
+}
+.main .mainbody #w900_2 .right_nr .nr{
+float:left;
+clear:both;
+}	
+.main .mainbody #m_right #list{
+	float: left;
+	clear:both;
+	width:100%;
+}
+.main .mainbody .maincontent .pline3 .glass {
+	float: right;
+	margin-top: -30px;
+	margin-right: 375px;
+	position: relative;
+	z-index: 99;
+}
+.main .mainbody .maincontent .pline3  .glass a:hover{
+display:none;
+ }
+ .main .mainbody #w900_2 .right_nr {
+	float: left;
+	width: 650px;
+}
+.main .mainbody #w900_2 .right {
+	float: left;
+	width: 220px;
+	margin-top: 30px;
+	margin-left: 10px;
+}
+.right li{
+	float: left;
+	margin: 5px;
+}
+#page{
+	clear:both;
+}

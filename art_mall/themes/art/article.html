@@ -1,0 +1,108 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>{$header_title}|{$title}</title> 
+	<meta name="description" content="{$description}">
+	<meta name="keywords" content="{$keywords}">  
+<link href="{$template_path}css/css.css" rel="stylesheet" type="text/css" />
+<link href="{$template_path}css/menu.css" rel="stylesheet" type="text/css" />
+<script language="javascript" type="text/javascript" src="{$template_path}js/jquery-1.4.2.js"></script>
+<script language="javascript" type="text/javascript" src="{$template_path}js/menu.js"></script>
+<style>
+
+body{
+	padding:0;
+	height: 90px;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 0;
+	margin-left: 0px;
+}
+
+img{ border:0}
+
+#container{ text-align:center}
+
+#container .cell{ padding:5px 5px 0; border:1px solid #E3E3E3; background:#F5F5F5; margin-top:10px}
+
+#container p{ line-height:20px; margin-top:5px}
+a:link {
+	color: #000000;
+	text-decoration: none;
+}
+a:visited {
+	text-decoration: none;
+	color: #000000;
+}
+a:hover {
+	text-decoration: none;
+	color: #000000;
+}
+a:active {
+	text-decoration: none;
+	color: #000000;
+}
+#w900_2 {
+	width: 880px;
+	margin-right: auto;
+	margin-left: auto;
+}
+</style>
+ 
+</head>
+
+<body>
+{include file="header.html"} 
+<div class="main">
+  
+  
+<div class="mainbody">
+<div id="w900_2">
+  <div class="right_nr">
+		<div class="top"><ul>{$home.nowNave}</ul></div>
+		<div class="nr">
+<DIV class=profile>
+	<SPAN class=title>{$home.article.name}</SPAN>
+	<div class="titlesub">
+	<A HREF="{$home.article.sourhttp}">{$home.article.sour}</A>   {$home.article.arti_date} 
+	【<a href="javascript:SetFont(18)">大</a> <a href="javascript:SetFont(16)">中</a> <a href="javascript:SetFont(12)">小</a>】 
+	 <A HREF="{$home.article.arcomms_url}" style="color:#FF6600">我要评论({insert name="exe" char="article_comms" arid=$home.article.arid})  </A>
+	{if $home.article.ifpic}<a href="{$home.article.pic_url}" style="color:#f00">[图库方式]</a>{/if}
+	<!-- 文章关键词 -->
+	{if $home.article.keys}
+	<p class=pic> 
+		 <b>搜索：</b>
+		 {foreach from=$home.article.keys item=keys}
+			 <A href="http://www.baidu.com/s?wd={$keys.keys}&amp;tn=ddd50" 
+	target="_blank">{$keys.keys}</A>&nbsp;&nbsp; 
+		 {/foreach} 	
+	</p>
+	{/if}
+	{if $home.article.edit_comm}
+	<p style="background-color:#FEEFF5;padding:1px">
+		<span style="color:#D02700;">编辑点评：</span>{$home.article.edit_comm} 
+	</p>
+	{/if}
+	</div>  
+
+	<div class="cont2" id="content_zhengwen"> 
+		{$home.article.descs}
+		{if $home.article.user_id}
+			<span style="margin: 20px 20px 10px 400px"> [责任编辑：{$home.article.user_id}]</span> 
+		{/if}
+		{if $home.article.articel_page}
+		<div class="fenye">{$home.article.articel_page}</div> 
+		{/if}  
+	</div>
+ 
+</DIV>
+		</div>
+	</div> 
+</div>
+</div>
+<div class="footer"></div>
+</div>
+{include file="footer.html"} 
+</body>
+</html>

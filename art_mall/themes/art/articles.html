@@ -1,0 +1,102 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>{$header_title}|{$title}</title> 
+	<meta name="description" content="{$description}">
+	<meta name="keywords" content="{$keywords}">  
+<link href="{$template_path}css/css.css" rel="stylesheet" type="text/css" />
+<link href="{$template_path}css/menu.css" rel="stylesheet" type="text/css" />
+<script language="javascript" type="text/javascript" src="{$template_path}js/jquery-1.4.2.js"></script>
+<script language="javascript" type="text/javascript" src="{$template_path}js/menu.js"></script>
+<style>
+
+body{
+	padding:0;
+	height: 90px;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 0;
+	margin-left: 0px;
+}
+
+img{ border:0}
+
+#container{ text-align:center}
+
+#container .cell{ padding:5px 5px 0; border:1px solid #E3E3E3; background:#F5F5F5; margin-top:10px}
+
+#container p{ line-height:20px; margin-top:5px}
+a:link {
+	color: #000000;
+	text-decoration: none;
+}
+a:visited {
+	text-decoration: none;
+	color: #000000;
+}
+a:hover {
+	text-decoration: none;
+	color: #000000;
+}
+a:active {
+	text-decoration: none;
+	color: #000000;
+}
+#w900_2 {
+	width: 880px;
+	margin-right: auto;
+	margin-left: auto;
+}
+</style>
+ 
+</head>
+
+<body>
+{include file="header.html"} 
+<div class="main">
+  
+  
+<div class="mainbody">
+<div id="w900_2">	 
+	{include file="left.html"} 
+	<div class="right_nr">
+		<div class="top"><ul>{$home.nowNave}</ul></div>
+		<div class="nr">
+	<UL>
+	{if $home.articles}
+		<!-- {foreach from=$home.articles item=articles} -->
+		
+		  <LI >
+		  <a name="{$articles.arid}"><a href="{$articles.article_url}" style="  color: black; font-size: 21px; font-weight: bold; line-height: 1.3em; margin-bottom: 0; "> {$articles.name}</a> <br/>
+		 
+		  [{$articles.arti_date}]</SPAN>
+		  <p > <SPAN style="   clear:both; color: #888; font-size: 12px; "><a href="#{$articles.arid}" style="  color: black; font-size: 21px; font-weight: bold; line-height: 1.3em; margin-bottom: 0; "><!-- {foreach from=$articles.img_list item=imglist} --><img src="{$imglist.thumb_url}"   /><!-- {/foreach} --> </a><br />{$articles.edit_comm} </p>
+		   </LI>  
+		<!-- {/foreach} --> 
+	{/if}
+	</UL>
+		</div>
+		<DIV id=page>
+<div class="fenye" >{$home.showpage}</div> 
+</DIV>
+	</div>
+	<div class="right">
+	<UL>
+	{if $home.articles}
+		<!-- {foreach from=$home.articles item=articles} -->
+		
+		  <LI >  
+		  <p ><a href="#{$articles.arid}" style="  color: black; font-size: 21px; font-weight: bold; line-height: 1.3em; margin-bottom: 0; "> <img src="{$articles.arti_thumb}"  width="60" height="50"  title="{$articles.name}"/>  </a></p>
+		   </LI>  
+		<!-- {/foreach} --> 
+	{/if}
+	</UL>
+	</div> 
+</div>
+</div>
+<div class="footer"></div>
+</div>
+{include file="footer.html"} 
+</body>
+</html>

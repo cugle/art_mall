@@ -1,0 +1,63 @@
+					{if $home.strMessage } 
+						<div style="color:#FF0000;font-size: 14px;width:500px;margin-left: 30px;margin-top: 50px"><A HREF="user.php?o=l" style="font-size: 16px;color:#3333FF">{$home.strMessage}>></A></div>
+					{else}
+
+						<FORM action="" method="post" name="theFormf" onsubmit="return  validate_f();" >
+						<li style="margin:5px;width:420px;clear:left">
+							<div class="user">您注册的邮箱：</div>
+							<div><INPUT TYPE="text"  NAME="email" value="" id="emailf" style="width:150px"></div> 
+						</li> 
+						<li style="margin:5px;width:420px;clear:left">
+							<div class="user">显示验证码：</div>
+							<div>
+								<input name="vcode" type="text" size="7"   id="vcodef"style="width:100px" value="点击显示验证码" onfocus="this.value='';loadvcode();" /><span id="span_img"></span>
+							</div> 
+						</li> 
+						<li style="margin:5px;width:420px;clear:left">
+							<div class="user">&nbsp;</div> 
+							<div>
+								<INPUT TYPE="submit" value="找回密码"  style="width:66px;padding-top:2px">   
+								<INPUT TYPE="hidden" name="o" value="{$home.user_o}">  
+							</div>
+						</li> 
+						</FORM>
+					{/if}
+								
+
+								
+
+							<script language="JavaScript">
+							  {literal}
+								function validate_f() { 
+									
+									var frm          = document.forms['theFormf'];
+									var email = document.getElementById("emailf").value;
+									var vcode = document.getElementById("vcodef").value;  
+
+							 
+
+									var msg = '';
+									if (vcode.length < 3 || vcode.length > 4){ 
+										  msg += '请正确输入验证码' + '\n'; 
+									}
+
+									var emailreg = /^([a-zA-Z0-9]+[_|\_|\.]?)*[a-zA-Z0-9]+@([a-zA-Z0-9]+[_|\_|\.]?)*[a-zA-Z0-9]+\.[a-zA-Z]{2,3}$/;
+									if(!emailreg.test(email))
+									{
+										 msg += '请输入邮箱' + '\n'; 
+									} 
+									
+									if (msg.length > 0){
+										alert(msg);
+										return false;
+									}else
+									{
+										return true;
+									}
+							 
+								} 
+								function loadvcode() {
+									document.getElementById('span_img').innerHTML="<img src=\"{$domain_url}vcode.php\" alt=\"点击刷新验证码\" onclick=\"document.getElementById('vcode').src='{$domain_url}vcode.php?'+Math.random();\" style=\"cursor:pointer;width:65px;height:18px;\" id=\"vcode\" align=\"absmiddle\" />";
+								}	
+							  {/literal}
+							</script>

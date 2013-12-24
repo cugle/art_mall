@@ -1,0 +1,14 @@
+User-agent: *
+Disallow: /admin/ 
+Disallow: /avatar/
+Disallow: /class/
+Disallow: /data/
+Disallow: /images/
+Disallow: /includes/
+Disallow: /install/
+Disallow: /themes/  
+Disallow: /js/ 
+Disallow: /jobadd.php
+Disallow: /user.php
+Disallow: /images_list.php
+Disallow: /webreg.php

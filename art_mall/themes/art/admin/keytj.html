@@ -1,0 +1,68 @@
+{include file="adminheader.html"}  
+ 
+<div class="box"> 
+{if $home.strMessage}
+	<div style="clear:left;margin: 0 auto;background-color:#B3B3FF">
+	{$home.strMessage}
+	</div>
+{/if}
+
+{if $home.arti_tag.atid > 0}
+	<TABLE width="100%" border=0>
+		<TR> 
+			<TD  align="left" colspan="7">
+				<form name="form1" method="post" action=""> 
+					<div class="odd"> 
+						<span class="txt">关键词:</span>
+						<input name="keys"  type="text" class="w100" value="{$home.arti_tag.keys}" /> 
+						<input name="top"  type="text"  style="width:30px" value="{$home.arti_tag.top}" />
+						<input type="submit" name="Submit" value="{if $home.arti_tag.atid < 1}增加{else}编辑{/if}" style="background-color: #FFCC66;margin-left: 20px"/> 
+						<input type="hidden" name="action" value="{if $home.arti_tag.atid  < 1}add{else}edit{/if}" />  
+						<input type="hidden" name="atid" value="{$home.arti_tag.atid}" /> 
+					</div>
+				</form>
+			</TD> 
+		</TR>
+	</table>
+{/if}
+<TABLE width="100%" border=0>
+<form method="POST" action="" name="listForm" target="_self">
+  <TR class=bg5>
+    <TD width="5%" align=left>序号</TD>
+	<TD width="10%" align=left>类型</TD>
+	<TD width="20%" align=left>关键词</TD>
+	<TD width="10%" align=left>排序</TD> 
+	<TD width="50%" align=left>文章/产品</TD> 
+	<TD width="5%" align=center>操作</TD>
+  </TR> 
+	{$home.StrtypeAll} 
+  <TR class=bg5>
+    <TD  align=right colspan="7">
+	<span style="float: left">
+	全选删除:<input onclick=selectAll() type="checkbox" name="check_all"/>
+	<INPUT TYPE="submit" name="submit" value="确认删除" style="background-color: #FF9900">
+	<INPUT TYPE="reset" name="reset" value="恢复" style="background-color: #CCFF99"> 
+	<INPUT TYPE="hidden" name="action" value="del"> 
+    </span>
+	<span style="float: right">
+	{$home.showpage}
+	</span>
+	</TD>
+  </TR>
+  </form>
+ </table> 
+ 
+<script type="text/javascript" language="JavaScript">
+	{literal}
+		function selectAll(){
+			xx = listForm.check_all.checked
+			for(var i=0;i<listForm.length;i++) {
+				if(listForm.elements[i].type=="checkbox")
+					listForm.elements[i].checked=xx;
+			}
+		} 
+	{/literal}
+</script>
+</div>
+ 
+{include file="adminfooter.html"} 

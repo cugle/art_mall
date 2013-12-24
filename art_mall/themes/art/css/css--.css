@@ -1,0 +1,106 @@
+body {
+	margin-left: 0px;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+}
+.main {
+	position:relative;
+	bottom:0px;
+	left:1px;
+	width:885px;
+	height:auto;
+	overflow:auto;
+	z-index:1;
+	background:#FFF;
+	margin-right: auto;
+	margin-left: auto;
+}
+#ToolBar {
+position:fixed;
+bottom:0px;
+width:100%;
+height:75px;
+text-align:center;
+background:#ccc;
+z-index:2;
+overflow:hidden;
+filter:alpha(Opacity=90);
+-moz-opacity:0.8;
+opacity: 0.8;
+ background-color:#000;
+}
+.main .header {
+	height: 150px;
+	width: 100%;
+	margin-top: 15px;
+}
+.main .footer {
+	height: 200px;
+	width: 100%;
+	float: left;
+}
+.main .header .munu li {
+	float: left;
+	list-style-type: none;
+	width: 110px;
+}
+.main .header .logo {
+	float: left;
+}
+.main .header .munu ul {
+	float: left;
+	padding-top: 15px;
+	padding-left: 50px;
+}
+.main .mainbody .flashbanner {
+	float: left;
+	height: 265px;
+	width: 687px;
+}
+.main .mainbody .logindiv {
+	float: left;
+	height: 265px;
+	width: 193px;
+	background-color: #000000;
+}
+.main .mainbody .maincontent {
+	float: left;
+	width: 100%;
+}
+#ToolBar li {
+	float: left;
+	width: 100px;
+	list-style-type: none;
+}
+#ToolBar ul {
+	padding: 0px;
+	width: 940px;
+	margin-top: 0px;
+	margin-right: auto;
+	margin-bottom: 0px;
+	margin-left: auto;
+}
+.searchinput {
+	background-image: url(../images/searchinputbg.jpg);
+	height: 25px;
+	width: 99px;
+	position: absolute;
+	right: 85px;
+	border: medium none;
+	color: #FFFFFF;
+}
+.searchdiv #search_goods {
+	background-image: url(../images/searchbtn.jpg);
+	height: 27px;
+	width: 65px;
+	position: absolute;
+	right: 20px;
+	display:block;
+}
+.cartlist {
+	color: #FFFFFF;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	margin-left: 5px;
+}

@@ -1,0 +1,122 @@
+#shadowbox_container {
+	LEFT: 0px;
+	MARGIN: 0px;
+	WIDTH: 100%;
+	TOP: 0px;
+	padding: 0px;
+	height: 100%;
+}
+#shadowbox_overlay {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN: 0px; WIDTH: 100%; PADDING-TOP: 0px; TOP: 0px; HEIGHT: 100%
+}
+#shadowbox_container {
+	DISPLAY: block; Z-INDEX: 999999; VISIBILITY: hidden; POSITION: fixed; TEXT-ALIGN: center
+}
+#shadowbox_overlay {
+	POSITION: absolute
+}
+#shadowbox {
+	MARGIN: 0px auto; POSITION: relative; TEXT-ALIGN: left;
+}
+#shadowbox_body {
+	PADDING-RIGHT: 0px;
+	PADDING-LEFT: 0px;
+	PADDING-BOTTOM: 0px;
+	MARGIN: 0px;
+	OVERFLOW: hidden;
+	PADDING-TOP: 0px;
+	POSITION: relative;
+	border: 1px solid #333333;
+}
+#shadowbox_body_inner {
+	POSITION: relative; HEIGHT: 100%
+}
+.html#shadowbox_content {
+	OVERFLOW: auto; HEIGHT: 100%
+}
+#shadowbox_loading {
+	WIDTH: 100%; POSITION: absolute; TOP: 0px; HEIGHT: 100%
+}
+#shadowbox_body {
+}
+#shadowbox_loading {
+	BACKGROUND-COLOR: #999999
+}
+#shadowbox_loading_indicator {
+	FLOAT: left; BACKGROUND-IMAGE: url(loading.gif); MARGIN: 10px 10px 0px; WIDTH: 32px; BACKGROUND-REPEAT: no-repeat; HEIGHT: 32px
+}
+#shadowbox_loading SPAN {
+	MARGIN-TOP: 16px; FONT-SIZE: 10px; FLOAT: left; FONT-FAMILY: 'Lucida Grande', Tahoma, sans-serif
+}
+#shadowbox_loading SPAN A:link {
+	COLOR: #fff; TEXT-DECORATION: underline
+}
+#shadowbox_loading SPAN A:visited {
+	COLOR: #fff; TEXT-DECORATION: underline
+}
+#shadowbox_title {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN: 0px; OVERFLOW: hidden; PADDING-TOP: 0px; POSITION: relative
+}
+#shadowbox_info {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN: 0px; OVERFLOW: hidden; PADDING-TOP: 0px; POSITION: relative
+}
+#shadowbox_title_inner {
+	LINE-HEIGHT: 16px; FONT-FAMILY: 'Lucida Grande', Tahoma, sans-serif; POSITION: relative
+}
+#shadowbox_info_inner {
+	LINE-HEIGHT: 16px; FONT-FAMILY: 'Lucida Grande', Tahoma, sans-serif; POSITION: relative
+}
+#shadowbox_title {
+	HEIGHT: 26px
+}
+#shadowbox_title_inner {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; FONT-SIZE: 16px; PADDING-BOTTOM: 5px; COLOR: #fff; PADDING-TOP: 5px
+}
+#shadowbox_info {
+	HEIGHT: 20px
+}
+#shadowbox_info_inner {
+	FONT-SIZE: 12px; COLOR: #fff
+}
+#shadowbox_nav {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; FLOAT: right; PADDING-BOTTOM: 2px; WIDTH: 45%; PADDING-TOP: 2px; HEIGHT: 16px
+}
+#shadowbox_nav A {
+	DISPLAY: block; FLOAT: right; MARGIN-LEFT: 3px; WIDTH: 16px; CURSOR: pointer; HEIGHT: 16px
+}
+#shadowbox_nav_close {
+	BACKGROUND-IMAGE: url(icons/close.png); BACKGROUND-REPEAT: no-repeat
+}
+#shadowbox_nav_next {
+	BACKGROUND-IMAGE: url(icons/next.png); BACKGROUND-REPEAT: no-repeat
+}
+#shadowbox_nav_previous {
+	BACKGROUND-IMAGE: url(icons/previous.png); BACKGROUND-REPEAT: no-repeat
+}
+#shadowbox_nav_play {
+	BACKGROUND-IMAGE: url(icons/play.png); BACKGROUND-REPEAT: no-repeat
+}
+#shadowbox_nav_pause {
+	BACKGROUND-IMAGE: url(icons/pause.png); BACKGROUND-REPEAT: no-repeat
+}
+#shadowbox_counter {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; FLOAT: left; PADDING-BOTTOM: 2px; WIDTH: 45%; PADDING-TOP: 2px
+}
+#shadowbox_counter A {
+	PADDING-RIGHT: 4px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; CURSOR: pointer; COLOR: #fff; PADDING-TOP: 0px; TEXT-DECORATION: none
+}
+#shadowbox_counter A.shadowbox_counter_current {
+	TEXT-DECORATION: underline
+}
+DIV.shadowbox_clear {
+	CLEAR: both
+}
+DIV.shadowbox_message {
+	PADDING-RIGHT: 10px; PADDING-LEFT: 10px; FONT-SIZE: 12px; PADDING-BOTTOM: 10px; PADDING-TOP: 10px; FONT-FAMILY: 'Lucida Grande', Tahoma, sans-serif; TEXT-ALIGN: center
+}
+DIV.shadowbox_message A:link {
+	COLOR: #fff; TEXT-DECORATION: underline
+}
+DIV.shadowbox_message A:visited {
+	COLOR: #fff; TEXT-DECORATION: underline
+}

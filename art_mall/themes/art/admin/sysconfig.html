@@ -1,0 +1,368 @@
+{include file="adminheader.html"}  
+<style> 
+ .desc{}
+ .desc ul{}
+ .desc ul li{width:980px;height:26px;}
+ .desc .txt{width:175px;float:left;font-weight: bold;text-align: right;margin: 1px;padding-top: 2px; height:24px;background-color: #F6F6F6}
+ .desc .input{width:780px;float:left; margin: 1px;padding-top: 2px;height:24px;background-color: #F6F6F6}
+ 
+</style> 
+<div class="box"> 
+	<div class="nave" style="width:960px">
+		<ul>
+			<li id="st1" {if $home.stylecss == 1} style="background-color: #FFCC66"{/if}><a onMouseDown="nave_sys(1)" style="cursor:pointer">基本属性设置</a></li>
+			<li id="st2"><a onMouseDown="nave_sys(2)" style="cursor:pointer">搜索优化设置</a></li>
+			<li id="st3"><a onMouseDown="nave_sys(3)" style="cursor:pointer">网站联系方式</a></li>
+			<li id="st4"><a onMouseDown="nave_sys(4)" style="cursor:pointer">QQ在线客户</a></li> 
+			{if $allow_home == $user_id}
+				<li id="st5" style="width:150px"><a onMouseDown="nave_sys(5)" style="cursor:pointer">SMTP邮件验证设置</a></li> 
+			{/if}
+		</ul>
+	</div>
+	<form name="form1" method="post" action="" enctype="multipart/form-data" >
+	<div class="desc" id="stylecss1"> 
+		<ul>
+			<li style="height: 1px"> 
+			</li>  
+			<li>
+				<div class="txt">网站名: </div>
+				<div class="input">
+				<input name="header_title" type="text" class="w200" value="{$home.Anorm.header_title}" /> 
+				</div> 
+			</li> 
+			<li>
+				<div class="txt">域名绑定: </div>
+				<div class="input">
+				<input name="main_domin" type="text" class="w200" value="{$home.Anorm.main_domin}" />
+				<span class="note">(注：顶级域名备案后才能使用。)</span>
+				</div> 
+			</li> 
+			<li>
+				<div class="txt">login:</div>
+				<div class="input">
+					<INPUT type="file" name="logo" size="20" />
+					<span id="logo_show">
+					 {if $home.Anorm.logo} 
+						 <A HREF="..\data/weblogo/{$home.Anorm.logo}" target="_blank"><IMG SRC="{$template_path}images/icon_view.gif" WIDTH="16" HEIGHT="16" BORDER="0" ALT="显示缩图"></A> 
+						 <a href="javascript:;" onclick="if (confirm('删除')) selectsAjax('{$home.Anorm.logo}','sysconfig','del','logo_show')"> 
+						 <IMG SRC="{$template_path}images/b_drop.png" WIDTH="16" HEIGHT="16" BORDER="0" ALT="删除缩图"></A> 
+					 {/if}
+					 </span>			
+					<span class="note">(注：支持.jpg .gif .png .swf格式。尺寸为:{$logo_w}px*{$logo_h}px)</span>
+					<INPUT type="hidden" name="old_logo"  value="{$home.Anorm.logo}" />   
+				 </div> 
+			</li> 			
+			<li>
+				<div class="txt">网站推荐:</div>
+				<div class="input">
+					<INPUT type="file" name="shop_logo" size="20" /> 
+					<span id="shop_logo_show">
+					 {if $home.Anorm.shop_logo} 
+						 <A HREF="..\data/weblogo/{$home.Anorm.shop_logo}" target="_blank"><IMG SRC="{$template_path}images/icon_view.gif" WIDTH="16" HEIGHT="16" BORDER="0" ALT="显示缩图"></A> 
+						 <a href="javascript:;" onclick="if (confirm('删除')) selectsAjax('{$home.Anorm.shop_logo}','sysconfig','del','shop_logo_show')"><IMG SRC="{$template_path}images/b_drop.png" WIDTH="16" HEIGHT="16" BORDER="0" ALT="删除缩图"></A>  
+					 {/if}
+					 </span>			
+					<span class="note">(注：支持.jpg .gif .png .swf格式。尺寸为:200px*150px)</span>
+					<INPUT type="hidden" name="old_shop_logo"  value="{$home.Anorm.shop_logo}" /> 
+				</div> 
+			</li> 
+			<li>
+				<div class="txt">水印图片:</div>
+				<div class="input">
+				<INPUT type="file" name="watermark" size="20" /> 
+				<span id="watermark_show">
+				 {if $home.Anorm.watermark}  
+					 <A HREF="..\/data/weblogo/{$home.Anorm.watermark}" target="_blank"><IMG SRC="{$template_path}images/icon_view.gif" WIDTH="16" HEIGHT="16" BORDER="0" ALT="显示缩图"></A> 
+					<a href="javascript:;" onclick="if (confirm('删除')) selectsAjax('{$home.Anorm.watermark}','sysconfig','del','watermark_show')"><IMG SRC="{$template_path}images/b_drop.png" WIDTH="16" HEIGHT="16" BORDER="0" ALT="删除缩图"></A>  
+				 {/if}
+				 </span>			
+				<span class="note">(注：支持.jpg .gif .png )</span>
+				<INPUT type="hidden" name="old_watermark"  value="{$home.Anorm.watermark}" /> 				
+				</div> 
+			</li> 
+			<li>
+				<div class="txt">前台页面缓存时间:</div>
+				<div class="input"><input name="sets[cache_time]" type="text" size="2" value="{$home.Anorm.cache_time}" />秒</div> 
+			</li> 
+			<li>
+				<div class="txt">LOGO尺寸(单位PX):</div>
+				<div class="input">
+				宽:<input name="sets[logo_w]" type="text" size="2" value="{if $home.Anorm.logo_w}{$home.Anorm.logo_w}{else}200{/if}" />
+				高:<input name="sets[logo_h]" type="text" size="2" value="{if $home.Anorm.logo_h}{$home.Anorm.logo_h}{else}60{/if}" />				
+				</div> 
+			</li> 
+			<li>
+				<div class="txt">大缩图尺寸(单位PX):</div>
+				<div class="input">
+				宽:<input name="sets[big_thumb_w]" type="text" size="2" value="{if $home.Anorm.big_thumb_w}{$home.Anorm.big_thumb_w}{else}300{/if}" />
+				高:<input name="sets[big_thumb_h]" type="text" size="2" value="{if $home.Anorm.big_thumb_h}{$home.Anorm.big_thumb_h}{else}225{/if}" />
+				</div> 
+			</li> 
+			<li>
+				<div class="txt">小缩图尺寸(单位PX):</div>
+				<div class="input">
+				宽:<input name="sets[min_thumb_w]" type="text" size="2" value="{if $home.Anorm.min_thumb_w}{$home.Anorm.min_thumb_w}{else}120{/if}" />
+				高:<input name="sets[min_thumb_h]" type="text" size="2" value="{if $home.Anorm.min_thumb_h}{$home.Anorm.min_thumb_h}{else}{/if}" />				
+				</div> 
+			</li> 
+			<li>
+				<div class="txt ">微型图尺寸(单位PX):</div>
+				<div class="input"> 
+				宽:<input name="sets[mis_thumb_w]" type="text" size="2" value="{if $home.Anorm.mis_thumb_w}{$home.Anorm.mis_thumb_w}{else}60{/if}" />
+				高:<input name="sets[mis_thumb_h]" type="text" size="2" value="{if $home.Anorm.mis_thumb_h}{$home.Anorm.mis_thumb_h}{else}54{/if}" />				
+				</div> 
+			</li> 
+			<li>
+				<div class="txt ">导航图片尺寸(单位PX):</div>
+				<div class="input"> 
+				宽:<input name="sets[nav_w]" type="text" size="2" value="{if $home.Anorm.nav_w}{$home.Anorm.nav_w}{else}60{/if}" />
+				高:<input name="sets[nav_h]" type="text" size="2" value="{if $home.Anorm.nav_h}{$home.Anorm.nav_h}{else}50{/if}" />				
+				</div> 
+			</li> 
+			<li>
+				<div class="txt ">网站静态:</div>
+				<div class="input"> 
+				是<INPUT TYPE="radio" NAME="sets[rewrite]" value="1" {if $home.Anorm.rewrite==1}CHECKED{/if}>
+				否<INPUT TYPE="radio" NAME="sets[rewrite]" value="0" {if $home.Anorm.rewrite<1}CHECKED{/if}>
+				<span class="note">如果开启网站伪静态，需要Apache 服务器下开启 Rewrite 模块，才能使用。</span>				
+				</div> 
+			</li> 
+ 
+			<li>
+				<div class="txt ">自定义模版:</div>
+				<div class="input"> 
+				是<INPUT TYPE="radio" NAME="user_template" value="1" {if $home.Anorm.user_template==1}CHECKED{/if}>
+				否<INPUT TYPE="radio" NAME="user_template" value="0" {if $home.Anorm.user_template<1}CHECKED{/if}>
+				<span class="note">启用自定义模版后，能在<A HREF="template_edit.php">模版管理->自定义模版</A>修改网站首页</span>				
+				</div> 
+			</li>  
+			<li>
+				<div class="txt ">新闻审核:</div>
+				<div class="input"> 
+				是<INPUT TYPE="radio" NAME="sets[article]" value="1" {if $home.Anorm.article==1}CHECKED{/if}>
+				否<INPUT TYPE="radio" NAME="sets[article]" value="0" {if $home.Anorm.article<1}CHECKED{/if}>
+				<span class="note">新闻审核后才显示</span>				
+				</div> 
+			</li> 
+			<li>
+				<div class="txt ">注册用户留言允许:</div>
+				<div class="input"> 
+				是<INPUT TYPE="radio" NAME="sets[reg_support]" value="1" {if $home.Anorm.reg_support==1}CHECKED{/if}>
+				否<INPUT TYPE="radio" NAME="sets[reg_support]" value="0" {if $home.Anorm.reg_support<1}CHECKED{/if}>
+				<span class="note">注册用户才允许留言</span>				
+				</div> 
+			</li> 
+			<li>
+				<div class="txt ">用户留言:</div>
+				<div class="input"> 
+				是<INPUT TYPE="radio" NAME="sets[support]" value="1" {if $home.Anorm.support==1}CHECKED{/if}>
+				否<INPUT TYPE="radio" NAME="sets[support]" value="0" {if $home.Anorm.support<1}CHECKED{/if}>
+				<span class="note">留言审核后才显示</span>				
+				</div> 
+			</li> 
+			<li>
+				<div class="txt ">友情链接:</div>
+				<div class="input"> 
+				是<INPUT TYPE="radio" NAME="sets[links]" value="1" {if $home.Anorm.links==1}CHECKED{/if}>
+				否<INPUT TYPE="radio" NAME="sets[links]" value="0" {if $home.Anorm.links<1}CHECKED{/if}>
+				<span class="note">友情链接审核后才显示</span>				
+				</div> 
+			</li> 
+			<li>
+				<div class="txt ">版权提示:</div>
+				<div class="input"> <input name="sets[footer_title]" type="text" size="40" value="{$home.Anorm.footer_title}" /> 
+				</div> 
+			</li>  
+			<li>
+				<div class="txt">ICP备案编号:</div>   
+				<div class="input"><input name="sets[icp]" type="text" size="30" value="{$home.Anorm.icp}" /> </div> 
+			</li> 
+
+			{if $allow_home == $admin_user_id} 
+				<li>
+					<div class="txt">默认模版:</div>   
+					<div class="input">
+						<input name="sets[sub_themes]" type="text" size="10" value="{$home.Anorm.sub_themes}" /> 
+						<span class="note" style="color:#FF0000">新注册网站,默认使用的模版目录名,如：gz500、simple</span>
+					</div>  
+				</li> 
+				<li>
+					<div class="txt">默认初始数据:</div>   
+					<div class="input">
+						<input name="sets[sour_scid]" type="text" size="10" value="{$home.Anorm.sour_scid}" /> 
+						<span class="note" style="color:#FF0000">新注册网站,注册时使用的初始默认数据，请填写scid号，如果不填写以主站初始数据为默认数据。</span>
+					</div>  
+				</li>  				
+			{/if}
+			<li style="height:75px">
+				<div class="txt"  style="height:75px">统计代码:</div>   
+				<div class="input" style="height:75px"> 
+					<TEXTAREA NAME="sets[tongji]" style="width:600px;height:70px">{$home.Anorm.tongji}</TEXTAREA> 
+				</div> 
+			</li>   
+		</ul>  
+	</div> 
+		
+	<div class="desc" style="display:none" id="stylecss2"> 
+		<ul>
+			<li style="height: 1px"> 
+			</li>  
+			<li>
+				<div class="txt">TITLE:</div>
+				<div class="input"><input name="sets[title]" type="text" class="w300" value="{if $home.Anorm.title}{$home.Anorm.title}{/if}"/></div> 
+			</li>
+			<li>
+				<div class="txt">SEO搜索关键词:</div>
+				<div class="input"><input name="sets[keywords]" type="text" class="w500" value="{$home.Anorm.keywords}"/></div> 
+			</li>
+			<li>
+				<div class="txt">SEO描述:</div>
+				<div class="input"><input name="sets[description]" type="text" class="w650" value="{$home.Anorm.description}"/></div> 
+			</li>
+ 
+		</ul> 
+	</div>
+
+	<div class="desc" style="display:none" id="stylecss3"> 
+		<ul>
+			<li style="height: 1px"> 
+			</li>  
+			<li>
+				<div class="txt">单位名:</div>
+				<div class="input"><input name="sets[shop_name]" type="text" size="30" value="{$home.Anorm.shop_name}" />
+				{$home.Ainducat.inducatOpt0} 
+				<span id="divinducatid_1">{$home.Ainducat.inducatOpt1}</span><span id="divinducatid_2">{$home.Ainducat.inducatOpt2}</span><span id="divinducatid_3">{$home.Ainducat.inducatOpt3}</span><span id="divinducatid_4">{$home.Ainducat.inducatOpt4}</span><span id="divinducatid_5">{$home.Ainducat.inducatOpt5}</span></div> 
+			</li>
+			<li>
+				<div class="txt">联系人:</div>
+				<div class="input"><input name="sets[contact]" type="text" size="8" value="{$home.Anorm.contact}" /><span style="color:#F00">*</span></div> 
+			</li>
+			<li>
+				<div class="txt">电话:</div>
+				<div class="input"><input name="sets[phone]" type="text" size="16" value="{$home.Anorm.phone}" /></div> 
+			</li>
+			<li>
+				<div class="txt">传真:</div>
+				<div class="input"><input name="sets[fax]" type="text" size="16" value="{$home.Anorm.fax}" /></div> 
+			</li>
+			<li>
+				<div class="txt">手机:</div>
+				<div class="input"><input name="sets[tel]" type="text" size="16" value="{$home.Anorm.tel}" /></div> 
+			</li>
+			<li>
+				<div class="txt">邮编:</div>
+				<div class="input"><input name="sets[zip]" type="text" class="w60" value="{$home.Anorm.zip}" /></div> 
+			</li>
+			<li>
+				<div class="txt">城市选择：</div>
+				<div class="input">{$home.Acitycat.citycatOpt0} 
+				<span id="divccid_1">{$home.Acitycat.citycatOpt1}</span><span id="divccid_2">{$home.Acitycat.citycatOpt2}</span><span id="divccid_3">{$home.Acitycat.citycatOpt3}</span><span id="divccid_4">{$home.Acitycat.citycatOpt4}</span><span id="divccid_5">{$home.Acitycat.citycatOpt5}</span> </div> 
+			</li>
+			<li>
+				<div class="txt">详细地址:</div>
+				<div class="input"><input name="sets[address]" type="text" class="w500" value="{$home.Anorm.address}" /></div> 
+			</li>
+			<li>
+				<div class="txt">Email:</div>
+				<div class="input"> <input name="sets[email]" type="text" size="20" value="{$home.Anorm.email}" /></div> 
+			</li>
+			<li>
+				<div class="txt">MSN:</div>
+				<div class="input"> <input name="sets[msn]" type="text" size="20" value="{$home.Anorm.msn}" /></div> 
+			</li>
+			<li>
+				<div class="txt">QQ:</div>
+				<div class="input"><input name="sets[qq]" type="text" size="20" value="{$home.Anorm.qq}" /></div> 
+			</li>
+			<li>
+				<div class="txt"></div>
+				<div class="input"></div> 
+			</li>
+		</ul> 
+	</div>
+ 
+		<div class="desc" style="display:none" id="stylecss4"> 
+			<table id="color" style="margin-left: 175px"> 
+				{if $home.Anorm.Rqq} 
+					<!-- {foreach from=$home.Anorm.Rqq item=v} -->
+					<tr>
+						<td> 
+						QQ号：<input type="text" name="qq[]" value="{$v[qq]}" style="width:100px"/> 
+						描述：<input type="text" name="qq_name[]" value="{$v[qq_name]}" style="width:100px"/> 
+						</td>
+					</tr> 
+					<!-- {/foreach} -->
+				{else}
+					<tr>
+						<td> 
+						QQ号：<input type="text" name="qq[]" value="" style="width:100px"/> 
+						描述：<input type="text" name="qq_name[]" value="" style="width:100px"/> 
+						</td>
+					</tr> 
+				{/if}
+			</table>
+			<a href="javascript:;" onclick="javascript:addline();"  style="margin-left: 175px">添加新的在线客户</a>
+		</div> 
+		<div class="desc" style="display:none" id="stylecss5"> 
+			<table id="color"  style="margin-left: 175px">  
+				<tr>
+					<td>SMTP服务器的用户邮箱</td> 
+					<td><input type="text" name="smtpusermail" value="{$home.Anorm.smtpusermail}" style="width:150px"/> </td> 
+				</tr>
+				<tr>
+					<td>SMTP服务器的用户密码</td> 
+					<td><input type="text" name="smtppass" value="{$home.Anorm.smtppass}" style="width:150px"/> </td> 
+				</tr>
+				<tr>
+					<td>SMTP服务器</td> 
+					<td><input type="text" name="smtpserver" value="{$home.Anorm.smtpserver}" style="width:150px"/> </td> 
+				</tr> 
+				<tr>
+					<td>SMTP服务器端口</td> 
+					<td><input type="text" name="smtpport" value="{if $home.Anorm.smtpserverport}{$home.Anorm.smtpserverport}{else}25{/if}" style="width:20px"/> </td> 
+				</tr>  
+
+			</table> 
+		</div> 
+		<div style="clear:left;overflow:hidden; clear:both;" class="even" >
+			<input type="hidden" name="action" value="{if $home.Anorm.scid}edit{else}add{/if}" />
+			<input type="submit" name="Submit" value="{if $home.Anorm.scid}网站基本资料编辑修改{else}网站基本资料增加{/if}" style="margin-left: 175px;background-color:#FFCC00"/>
+			<input type="hidden" name="scid" value="{if $home.Anorm.scid}{$home.Anorm.scid}{else}0{/if}" /> 
+		</div> 
+	 </form> 
+</div>
+<SCRIPT src="..\/js/ajax.js" type="text/javascript"></SCRIPT> 
+<script type="text/javascript" language="JavaScript">
+  {literal}
+	function nave_sys(a) {  
+		for (i = 1; i <= 5; i++){ 
+			var obj = "stylecss"+i;  
+			//var obj2 = "st"+i;  
+			if(a == i){
+				document.getElementById(obj).style.display = "";
+				//document.getElementById(obj2).style.background-color= "#FFCC66";
+			}else{
+				document.getElementById(obj).style.display = "none";
+				//document.getElementById(obj2).style.background-color= "";
+			} 
+		}
+
+		for (i = 1; i <= 5; i++){   
+			var obj2 = "st"+i;  
+			if(a == i){ 
+				 document.getElementById(obj2).style.backgroundColor= "#FFCC66";
+			}else{ 
+				 document.getElementById(obj2).style.backgroundColor= "";
+			} 
+		} 
+		document.getElementById("messages").style.display = "none"; 
+	}
+	function addline(){
+        var x=document.getElementById('color').insertRow(0);
+        var y=x.insertCell(0);
+        y.innerHTML="QQ号：<input type=\"text\" name=\"qq[]\" value=\"\" style=\"width:100px\"/> 描述：<input type=\"text\" name=\"qq_name[]\" value=\"\" style=\"width:100px\" />"; 
+    }	
+  {/literal}
+</script>
+{$home.spt}  
+{include file="adminfooter.html"} 

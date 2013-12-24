@@ -1,0 +1,109 @@
+{if $home.uaddrs}
+	<li class="line" style="margin:5px;width:615px; height:24px;font-weight: bold; overflow:hidden;">
+		<div style="width:60px; height:24px;float:left">姓名</div>
+		<div style="width:90px; height:24px;float:left">电话</div> 
+		<div style="width:290px; height:24px;float:left">地址</div>  
+		<div style="width:50px; height:24px;float:left">区号</div> 
+		<div style="width:40px; height:24px;float:left">默认</div> 
+		<div style="width:40px; height:24px;float:left">删除</div> 
+	</li> 
+
+	{foreach from=$home.uaddrs item=uaddrs} 
+		<li class="line" style="margin:5px;width:615px; height:24px; overflow:hidden;" id="addrsdel_{$uaddrs.id}">
+			<div style="width:60px; height:24px;float:left; overflow:hidden;">{$uaddrs.name}</div>
+			<div style="width:90px; height:24px;float:left; overflow:hidden;">{$uaddrs.tel}</div> 
+			<div style="width:290px; height:24px;float:left; overflow:hidden;">{$uaddrs.ccid}{$uaddrs.addrs}</div>  
+			<div style="width:50px; height:24px;float:left">{$uaddrs.zip}</div> 
+			<div style="width:40px; height:24px;float:left" id="addrstype_{$uaddrs.id}"><INPUT style="margin-top:5px;" TYPE="radio" NAME="默认" {if $uaddrs.type==1}checked{/if} onMouseDown="addrsdel({$uaddrs.id},'addrstype')"></div> 
+			<div style="width:40px; height:24px;float:left;cursor:pointer;" onMouseDown="if(confirm('删除')) addrsdel({$uaddrs.id},'uaddrsdel')">删除</div> 
+		</li> 
+	{/foreach}
+{/if} 
+<li  style="margin:5px;width:6150px; height:124px; overflow:hidden;">
+<div style="color:#0066FF;font-weight: bold">添加新的收货地址</div> 
+<div>
+	<FORM action="" method="post" name="theForm" onsubmit="return validate();">
+		区号：<INPUT TYPE="text" NAME="zip"  value="" style="width:50px"> 
+		{$home.citycatOpt0}
+		<span id="divccid_1">{$home.Acitycat.citycatOpt1}</span><span id="divccid_2">{$home.Acitycat.citycatOpt2}</span><span id="divccid_3">{$home.Acitycat.citycatOpt3}</span><span id="divccid_4">{$home.Acitycat.citycatOpt4}</span><span id="divccid_5">{$home.Acitycat.citycatOpt5}</span> 
+		详细地址：<INPUT TYPE="text" NAME="addrs"  value="" style="width:150px"> <br/>
+		 姓名：<INPUT TYPE="text" NAME="name" value="" style="width:50px"> 电话：<INPUT TYPE="text" NAME="tel"  value="" style="width:100px">  
+				<INPUT TYPE="submit" value="添加收货地址" style="margin-top: 5px"> 
+				<INPUT TYPE="hidden" name="o" value="{$home.user_o}">  
+	</form>
+</div>
+</li>
+<script language="JavaScript">
+  {literal}
+	function validate() {
+		var frm   = document.forms['theForm']; 
+		var ccid  = frm.elements['ccid'].value;
+		var name  = frm.elements['name'].value;
+		var addrs = frm.elements['addrs'].value;
+		var zip   = frm.elements['zip'].value;
+		var tel   = frm.elements['tel'].value;
+
+		var msg = '';
+		var reg = null;
+
+		if( ccid.length < 1){
+			msg += '请选择城市' + '\n';
+		}
+
+		if( addrs.length < 5){
+			msg += '请输入地址' + '\n';
+		}
+
+		if (name.length < 1 || name.length > 10){ 
+			msg += '请输入姓名' + '\n'; 
+		}
+
+		if (tel.length < 5 || tel.length > 32){ 
+			msg += '请输入电话' + '\n'; 
+		}
+
+		if (msg.length > 0){
+			alert(msg);
+			return false;
+		}else
+		{
+			return true;
+		}
+	}
+
+	function addrsdel(a,op)
+	{ 
+		obj = op + "_" + a;
+		if(op == 'uaddrsdel'){
+			document.getElementById(obj).style.display="none";
+		}
+		var strTemp = "ajax_command.php?id=" + a + "&op=" + op;  
+		send_request(strTemp);
+	}
+
+	function reg_check()
+	{
+		 obj = "check_reg";
+		 var user_name = document.getElementById("user_name").value;    
+		 if( user_name.length < 4 || user_name.length > 26)
+		 {
+			alert( " 4-26个英文字母或数字 ");
+			return false;
+		 }
+		 
+		 var strTemp = "ajax_command.php?user_name=" + user_name + "&op=reg_check";
+		 send_request(strTemp);
+	}
+
+	function check_help()
+	{
+		 obj = "help_reg";
+		 var user_name = document.getElementById("user_name").value;
+		 var strTemp = "ajax_command.php?user_name=" + user_name + "&op=help_reg";
+		 send_request(strTemp);
+	}
+	function loadvcode() {
+		document.getElementById('span_img').innerHTML="<img src=\"{$domain_url}vcode.php\" alt=\"点击刷新验证码\" onclick=\"document.getElementById('vcode').src='{$domain_url}vcode.php?'+Math.random();\" style=\"cursor:pointer;width:65px;height:18px;\" id=\"vcode\" align=\"absmiddle\" />";
+	}
+  {/literal}
+</script>

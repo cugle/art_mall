@@ -1,0 +1,14 @@
+<!-- {if $home.car}-->
+<FORM action="" method="post" name="theForm" onsubmit="return validate();" style="margin: 5px">
+	<!-- {foreach from=$home.car item=products} -->  
+		<li class="line" style="margin:0px;width:180px; height:25px; overflow:hidden;" id="carsdel_{$products.id}">
+		  <div style="width:100px;text-align:center; height:25px;float:left; overflow:hidden;"><A HREF="{$products.product_url}" target="_blank" style="color:#FFFFFF" >{$products.name}</A></div>  
+			<div style="width:80px;text-align:center; height:25px;float:left">{$products.nums}</div>   
+  </li> 
+	<!-- {/foreach} -->
+	<li style="height:25px;float:right;margin:5px;"><A HREF="user.php?o=car" style="color:#FF9900">进入购物车>></A></li>
+	 
+	 
+</form>
+<!-- {/if}-->
+ 

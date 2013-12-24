@@ -1,0 +1,96 @@
+{include file="adminheader.html"}  
+ 
+<div class="box"> 
+	<div class="nave" style="width:935px">
+		<ul>
+			<li {if $home.stylecss == 1}style="background-color:#FFCC66"{/if}><a href="?stylecss=1">顶部主导航</a></li>
+			<li {if $home.stylecss == 2}style="background-color:#FFCC66"{/if}><a href="?stylecss=2">底部主导航</a></li> 
+			<li {if $home.stylecss == 3}style="background-color:#FFCC66"{/if}><a href="?stylecss=3">底部帮助导航</a></li> 
+		</ul>
+	</div> 
+	
+	<TABLE width="100%" border=0>
+		<TR> 
+			<TD  align="left" colspan="7">
+				<form name="form1" method="post" action="" enctype="multipart/form-data"> 
+					<div class="odd">
+						<span class="txt">系统内容:</span>
+						{$home.optNavesys}
+						<span class="txt">名称:</span>
+						<input name="name" id="name_id" type="text" class="w100" value="{if $home.Anav.name}{$home.Anav.name}{/if}" /> 
+						<span class="txt">图标:</span>
+						<INPUT type="file" name="url_logo" class="w200" /> 
+						<span id="nav_show">
+						 {if $home.Anav.url_logo} 
+							  <A HREF="..\/data/weblogo/{$home.Anav.url_logo}" target="_blank"><IMG SRC="{$template_path}images/icon_view.gif" WIDTH="16" HEIGHT="16" BORDER="0" ALT="显示图标"></A>
+							  <a href="javascript:;" onclick="if (confirm(\'删除\')) selectsAjax('{$home.Anav.url_logo}','nav','del','nav_show')"><IMG SRC="{$template_path}images/b_drop.png" WIDTH="16" HEIGHT="16" BORDER="0" ALT="删除缩图"></A> 
+						 {/if}	 
+						 </span>			
+						 <span class="note">(支持.jpg .gif .png 格式,尺寸:宽{$nav_w}px*高{$nav_h}px)</span>
+						<INPUT type="hidden" name="old_url_logo"  value="{$home.Anav.url_logo}" />
+					</div>
+					<div class="even">
+						<span class="txt">地址:</span>
+						<input name="url" id="url_id" type="text" class="w300" value="{if $home.Anav.url}{$home.Anav.url}{/if}" />
+						<span class="note">
+						如果是本站的网址，可缩写为与根目录相对地址，如index.php；
+						其他情况都应该输入完整的网址，如http://www.xy58.com/
+						</span>
+					</div>
+					<div class="odd">
+						<!-- 主导航选择  -->
+						<span class="txt">选择上级导航:</span>
+						<SELECT NAME="top">
+							<OPTION VALUE="0" {if $home.Anav.top < 1}SELECTED{/if}>为主导航</OPTION>
+							<!-- {foreach from=$home.mainnav item=mainnav} -->
+								<OPTION VALUE="{$mainnav.id}" {if $home.Anav.top == $mainnav.id}SELECTED{/if}>{$mainnav.name}</OPTION>
+							<!-- {/foreach} --> 
+						</SELECT>
+
+						<span class="txt">显示顺序:</span>
+						<input name="vieworder" type="text" size="2" value="{if $home.Anav.vieworder}{$home.Anav.vieworder}{/if}" /> 
+
+						<span class="txt">在新窗口打开:</span>
+						<SELECT NAME="opennew">
+							<OPTION VALUE="0" {if $home.Anav.opennew < 1}SELECTED{/if}>否</OPTION>
+							<OPTION VALUE="1" {if $home.Anav.opennew == 1}SELECTED{/if}>是</OPTION>
+						</SELECT>  
+					</div>
+					<div class="even">
+						<input type="submit" name="Submit" value="{if $home.Anav.id < 1}增加{else}编辑{/if}" style="background-color: #FFCC66;margin-left: 20px"/> 
+						<input type="hidden" name="action" value="{if $home.Anav.id < 1}add{else}edit{/if}" />        
+						<input type="hidden" name="id" value="{if $home.Anav.id < 1}{$home.Anav.id }{else}0{/if}" /> 
+						<input type="hidden" name="ifbotton" value="{$home.stylecss}" /> 
+					</div>
+				</form>
+			</TD> 
+		</TR>
+	</table>
+
+	<TABLE width="100%" border=0>
+		<TR class=bg5>
+			<TD align=left>名称</TD>
+			<TD align=left>图标</TD>
+			<TD align=left>地址</TD>
+			<TD align=left>顺序</TD> 
+			<TD align=left>新窗口打开</TD>
+			<TD align=left>编辑/删除</TD>
+		</TR>
+		{$home.StrtypeAll}
+		<TR class=bg5>
+			<TD colspan="7" align=right>{$home.showpage}</TD>
+		</TR>
+	</TABLE>
+
+	<SCRIPT src="..\/js/ajax.js" type="text/javascript"></SCRIPT>
+	<script type="text/javascript" language="JavaScript">
+	  {literal}
+		function nave_sys(a,b) {
+			document.getElementById("name_id").value = b;
+			document.getElementById("url_id").value  = a;
+		} 
+	  {/literal}
+	</script>
+</div>
+ 
+{include file="adminfooter.html"} 

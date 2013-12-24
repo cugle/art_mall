@@ -1,0 +1,57 @@
+body {margin:0px;padding:0px;font-size:12px;text-align:center;}
+body > div {text-align:center; margin-right:auto; margin-left:auto;}
+
+a:hover { color:#ff4400; }
+.hand { cursor:pointer; }
+
+.header {width:1016px;float:left;margin:2px 0 0 13px;height:108px;border:1px solid #0066CC;background-color:#EEEEEE}  
+.header  .logo{margin:1px;width:280px;height:106px;float:left;background-color:#FFF;}
+.header  .logo .txt{font-size:40px;color:#C00;}
+.header  .logo .sub{font-size:12px;color:#e00;margin-top: 5px}
+.header  .logo .sub a{font-size:12px;}
+.header  .banner{margin:1px;height:106px;width:562px;float:left;text-align: left;line-height:20px;padding-left: 2px;background-color:#FFF;}
+.header  .right{margin:1px;width:160px;padding:2px;float:right;text-align: right;color:#F00; line-height:19px;background-color:#FFCC00}  
+.header  .right .txt  {font-weight: bold;float:right;color:#C00;}
+.header  .right select,input {color:#C00;height:18px}
+
+.content{width:1020px;float:left;margin-left:10px;}
+.content .left{ float:left; width:220px; border:1px solid #0066CC; margin:1px; }
+.content .center{float:left;width:488px;border:1px solid #FF0000;margin:1px;}
+.content .right{float:right;width:300px;border:1px solid #0066CC;margin:1px}
+.mo{height:auto;border:1px solid #CCC;margin:3px;background:#FFF}
+.mo h1{background:#ECF9FF;height:18px;padding:3px;cursor:move}
+.closediv{cursor:default;}
+.minusspan{cursor:default;}
+.mo .nr{height:200px;border:1px solid #F3F3F3;margin:2px}
+.mo .nr .set{height:18px;float:left;color:#00F;cursor:pointer;} 
+.mo .nr ul{margin-left:15px;}
+.mo .nr ul li{text-align: left;}
+h1{margin:0px;padding:0px;text-align:left;font-size:12px}
+.dragging {FILTER: progid:DXImageTransform.Microsoft.Alpha(opacity=60); opacity: 0.6; moz-opacity: 0.6 }
+
+
+/*弹出框样式开始*/
+.color333 {color: #333;}
+.color999 {color: #999;}
+.colorF00 {color: #F00;}
+.yh_tc_con{width: 640px;overflow: hidden;}
+.yh_tc_titcon{height: 36px;width: 640px;overflow: hidden;background: url(images/tc_tit_bg.gif);}
+.yh_tc_tebcon{width: 640px;overflow: hidden;background: url(images/tc_teb_bg.gif);background-repeat: repeat-y;}
+.yh_tc_bymcon{height: 10px;width: 640px;overflow: hidden;background: url(images/tc_bum_bg.gif);}
+.right_btncon_close{float: right;height: 28px;width: 28px;margin-top: 4px;margin-right: 4px;overflow: hidden;}
+.hz_btn_close{height: 28px;width: 28px;display: block;background: url(images/tc_btn_gb.gif);}
+.hz_btn_close:hover{background-position: 0 -30px;}
+.left_txtcon{float: left;height: 35px;width: 120px;font-family: "宋体", Arial;font-size: 14px;line-height: 35px;font-weight: bold;color: #333;text-align: left;text-indent: 0.8em;overflow: hidden;}
+.tabbox {font-family: "宋体",Arial;font-size: 14px;font-weight: normal;line-height: 28px;margin-bottom:5px;margin-top:5px;padding-left: 10px;text-align: left;width: 630px;}
+.input_dl dt, .input_dl dd {float: left;}
+.tabbox .input_dl {overflow: hidden;width: 630px;}
+.tabbox .input_dl dt {font-family: "宋体",Arial;font-size: 14px;font-weight:bold;height: 28px;line-height: 28px;text-align: right;width:90px;}
+.tabbox .input_dl dd {margin:0;overflow: hidden;width:530px;}
+.mem_text_in {border: 1px solid #CCCCCC;border-radius: 3px 3px 3px 3px;color: #000000;float: left;font-family: "宋体",Arial;font-size: 14px;font-weight: normal;height: 20px;line-height: 20px;margin-right: 10px;outline: medium none;padding: 3px;width: 100px;}
+.tabbox .input_dl dd span {float: left;font-family: "宋体",Arial;font-size: 12px;font-weight: normal;height: 26px;line-height: 26px;overflow: hidden;width: 320px;}
+.yz_btn {background: url(images/tc_btn_yzm.jpg);border: medium none;cursor: pointer;display: inline-block;float: left;height: 24px;margin-right: 5px;width: 100px;margin-top: 2px;}
+.yh_tc_btn_qr{background: url("images/tc_btn_qr.jpg") no-repeat scroll 0 0 transparent;border: medium none;cursor: pointer;display: block;float: left;height: 40px;width: 140px;margin-right: 15px;}
+.yh_tc_btn_qr:hover{background-position: 0 -42px;}
+.yh_tc_btn_qx{background: url("images/tc_btn_qx.jpg") no-repeat scroll 0 0 transparent;border: medium none;cursor: pointer;display: block;float: left;height: 40px;width: 80px;}
+.yh_tc_btn_qx:hover{background-position: 0 -42px;}
+/*弹出框样式结束*/

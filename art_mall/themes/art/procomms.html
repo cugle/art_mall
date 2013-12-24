@@ -1,0 +1,173 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>{$header_title}|{$title}</title> 
+	<meta name="description" content="{$description}">
+	<meta name="keywords" content="{$keywords}">  
+<link href="{$template_path}css/css.css" rel="stylesheet" type="text/css" />
+<link href="{$template_path}css/menu.css" rel="stylesheet" type="text/css" />
+<script language="javascript" type="text/javascript" src="{$template_path}js/jquery-1.4.2.js"></script>
+<script language="javascript" type="text/javascript" src="{$template_path}js/menu.js"></script>
+<style>
+
+body{
+	padding:0;
+	height: 90px;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 0;
+	margin-left: 0px;
+}
+
+img{ border:0}
+
+#container{ text-align:center}
+
+#container .cell{ padding:5px 5px 0; border:1px solid #E3E3E3; background:#F5F5F5; margin-top:10px}
+
+#container p{ line-height:20px; margin-top:5px}
+a:link {
+	color: #000000;
+	text-decoration: none;
+}
+a:visited {
+	text-decoration: none;
+	color: #000000;
+}
+a:hover {
+	text-decoration: none;
+	color: #000000;
+}
+a:active {
+	text-decoration: none;
+	color: #000000;
+}
+#w900_2 {
+	width: 880px;
+	margin-right: auto;
+	margin-left: auto;
+}
+</style>
+ 
+</head>
+
+<body>
+{include file="header.html"} 
+<div class="main">
+  
+  
+<div class="mainbody">
+<div id="w900_2">	 
+  {include file="leftpro.html"} 
+  <div class="right_nr">
+	  <div class="top"><ul>{$home.nowNave}</ul></div>
+	  <div class="nr"> 
+	  <!-- 主体部分 start -->
+				<div class="prow2">
+					<div class="pline2"><a href="{$home.procomms.product_url}">{$home.procomms.name}</a></div> 
+				</div>
+				<div class="blank2"></div>
+				<div class="gbox">
+					<!--{if $home.procomms.pro_comms}-->
+						<!-- {foreach from=$home.procomms.pro_comms item=pro_comms} -->
+						<div class="gline1" style="font-weight:bold;">咨询人：{$pro_comms.ip}，时间：{$pro_comms.dateadd}</div> 
+						<div class="gline2">{$pro_comms.name}</div>
+						<div class="gline3">
+							{$pro_comms.descs}
+						</div>
+						<div class="both5"></div>
+						
+						<!-- {/foreach}--> 
+					<!--{/if}--> 
+
+					{if $home.procomms.showpage}
+						<div class="clear"></div>
+						<div class="fenye" style="float:left;margin:5px">{$home.procomms.showpage}</div>
+						<div class="clear"></div> 
+					{/if}   
+					<FORM name="theForm" METHOD=POST ACTION="procomms.php" style="margin: 0 10px" onsubmit="return validate();"> 
+
+						<table   cellpadding="1" cellspacing="5">
+						<tr>
+							<td><span>*</span> 咨询标题：</td>
+							<td><input type="text" name="name" id="name"/></td>
+						</tr>
+						<tr>
+							<td><span>*</span> 联系方式：</td>
+							<td><input type="text" name="email" id="email" /> (可以是电话、QQ、email等)</td>
+						</tr>
+
+						<tr>
+							<td><span>*</span> 咨询内容：</td>
+							<td><textarea name="descs" cols="50" rows="5" class="inputL" style="width:400px;" id="descs"></textarea></td>
+						</tr>
+						{if $user.user_id < 1}
+							{if $reg_support > 0}  
+							<tr>
+								<td align="right"></td>
+								<td>
+									<span style="color:#F00;font-weight: lighter">你还没有登录，注册登录后才允许留言</span>
+								</td>
+							</tr> 
+							{/if}
+						{/if} 
+						<tr>
+							<td align="right"><span>*</span>验证码：</td>
+							<td><input name="vcode" type="text" size="7" value="" onfocus="loadvcode();" /><span id="span_img"></span></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td>
+								<input name="提交评论" type="submit" value="提交" />
+								<INPUT TYPE="hidden" name="id" value="{$home.procomms.prid}"> 
+								<INPUT TYPE="hidden" NAME="act" value="install">	
+								 
+							</td>
+						</tr>
+						</table>
+					</FORM> 
+				</div>
+				 
+	  <!-- 主体部分 end -->
+	  </div> 
+</div>
+<script language="JavaScript">
+  {literal}
+	function validate() {
+		var frm        = document.forms['theForm'];
+		var name       = frm.elements['name'].value; 
+		var email      = frm.elements['email'].value; 
+
+		var msg = '';
+		var reg = null; 
+		if( name.length < 2 || name.length > 180){
+			msg += '请正确输入标题' + '\n';
+		}
+
+		if (email.length < 5 || email.length > 180)
+		{
+			msg += '联系方法错误' + '\n';
+		}
+
+ 
+
+		if (msg.length > 0){
+			alert(msg);
+			return false;
+		}else
+		{
+			return true;
+		}
+	} 
+	function loadvcode() {
+		document.getElementById('span_img').innerHTML="<img src=\"{$domain_url}vcode.php\" alt=\"点击刷新验证码\" onclick=\"document.getElementById('vcode').src='{$domain_url}vcode.php?'+Math.random();\" style=\"cursor:pointer;width:65px;height:18px;\" id=\"vcode\" align=\"absmiddle\" />";
+	}
+	{/literal}
+</script> 
+</div>
+</div>
+</div>
+{include file="footer.html"} 
+</body>
+</html>

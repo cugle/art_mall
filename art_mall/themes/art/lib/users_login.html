@@ -1,0 +1,49 @@
+<div id="user_login">
+{if $user_info.login_fail}
+	  <br/>
+	  <div>嗨，{$user_info.user_name}, 欢迎你！</div>
+	  <br/>
+	  <div align="right"><a href="user.php">进入用户中心</a> | <a href="user.php?act=logout">退出</a></div>
+	  <br/>
+{else}
+	 <form id="OUN_LOGINFORM" name="OUN_LOGINFORM" method="post" action="javascript:signIn()" style="margin: 0px">
+		{if $user_info.messages}
+			 <div style="color: #FF6633">{$user_info.messages}</div>
+		{/if}
+	 <BR/>
+		<B>用户名:</B> <input name="user_name" id="user_name" type="text" size="10" value="" style="margin: 0px;width:80px;background-color: #000" />
+		<br/>
+		<B>密　码:</B> <input name="password" type="password" id="password" size="10" value="" style="margin: 0px;width: 80px;background-color: #000" />
+		<input type="hidden" name="act" value="act_login"/>
+		<input type="hidden" name="back_act" value="{$now_url}"/>				
+		<br>
+		<input type="submit" name="Submit" value="登陆" style="padding:0px;width:60px;margin:5px 0px 0px 50px;background-color: #FFCC66;color:#000"/>				
+		<A HREF="user_reg.php?act=register"/>注册 </A>
+	  </form>
+	  <!-- 用户登陆的 ajax login start -->
+	   <script type="text/javascript" src="js/ajax.js"></script>
+	   <script language="JavaScript">
+	   {literal}
+	   function signIn()
+	   {
+		 obj = "user_login";
+		 var user_name = document.getElementById("user_name").value;    
+		 if( user_name.length < 2 || user_name.length > 26)
+		 {
+			 alert( " 用户名错误 ");
+			 return false;
+		 }
+		 var password = document.getElementById("password").value;    
+		 if( password.length < 1 )
+		 {
+			  alert( " 密码错误 ");
+			  return false;
+		 }	 
+		 var strTemp = "user.php?user_name=" + escape(user_name) + "&password=" + escape(password)+ "&act=ajax_login";
+		 send_request(strTemp);
+		}
+		{/literal}
+		</script>
+	  <!-- ajax login end -->
+{/if}
+</div>

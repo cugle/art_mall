@@ -1,0 +1,39 @@
+{include file="adminheader.html"}  
+	<div class="box" style="width:808px"> 
+		   <table width="100%" border="0" cellspacing="1" cellpadding="1" class="button">
+			<tr>
+			  <td align="middle"> 
+			   <span class="red">注册时间:</span>{$home.Auser.add_time} <span class="red"> 最后一次登录:</span> {$home.Auser.last_login}<span class="red"> IP:</span> {$home.Auser.last_ip}
+			  </td>
+			</tr>
+		  </table>
+		   <table width="100%" border="0" cellspacing="1" cellpadding="1" class="button" >
+			<tr style="font-weight: bold;background-color:#FFF8F0">
+			  <td align="middle"> 网站名称 </td>
+			  <td align="middle"> 管理帐号 </td>
+			  <td align="middle"> 开通时间 </td>
+			  <td align="middle"> 网站类型 </td>
+			  <td align="middle"> 网站域名 </td>
+			  <td align="middle"> 操作 </td>
+			</tr>
+			<tr style="background-color:#FFFFFF">
+			  <td align="middle">{$header_title}</td>
+			  <td align="middle">{$user_name}</td>
+			  <td align="middle">{$home.Auser.add_time}</td>
+			  <td align="middle">{$states_type}</td>
+			  <td align="middle">{$user_url}</td>
+			  <td align="middle">
+				  <A HREF="adminmy_base.php">密码修改</A><br/><A HREF="sysconfig.php">域名绑定</A>
+			  </td>
+			</tr>
+		  </table>
+		  <table width="100%" border="0" cellspacing="2" cellpadding="1">
+			<tr>
+			  <td >
+			  {$home.strShow} 
+			  <div class="line"></div> 
+			  </td>
+			</tr>
+		  </table>
+	</div>
+{include file="adminfooter.html"} 

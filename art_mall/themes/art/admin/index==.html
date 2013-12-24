@@ -1,0 +1,84 @@
+﻿{if $auser.auser_id < 1}
+	{include file="adminheader.html"}
+	<style> 
+	.login_line{width:780px;height:265px; margin:5px auto; padding:2px;  border-style:solid; border-width:1px; border-color:#E5E5E5; }
+	.login_line .left{ width:410px; height:265px; float:left;  } 
+	.login_line .right{ width:360px; height:265px;  float:left; }
+	.txt{font-weight: bold;font-size:20px;}
+	.nave{width:100%;background-color: #E8E8E8;margin: 2px;padding: 5px} 
+	</style> 
+	 
+	<div class="login_line">
+		<div class="left"><img src="{$template_path}images/bg_admin.jpg" width="406" height="265" /></div>
+		<div class="right">
+
+				<form name="form1" method="post" action="" style="margin: 0">
+					<TABLE width="100%" border="0" align="center" height="223" cellspacing="0" cellpadding="0">	
+						<TR height="50">   
+							<TD height="52" colspan="3" align="center" valign="bottom" ><div class="txt">{$web_title}</div></TD> 
+						</TR>
+						<TR height="12">   
+							<TD height="12" colspan="3" align="left" valign="bottom" style="background-color: #F0F0F0;">
+							 <a href="{$domain_url}">首页</a> > 管理登录 
+							<div class="line"></div>
+							</TD> 
+						</TR> 
+						<TR >
+							<TD width="297" height="22" align="right" ><b>用户名:</b></TD>
+							<TD colspan="2" align="left" ><input name="user_name" type="text" size="20" value="{$auser.user_name}"    style="background-color: #F5F5F5"/></TD>
+						</TR>
+						<TR >
+							<TD height="22" align="right" ><b>密　码:</b></TD>
+							<TD colspan="2" align="left" ><input name="password" type="password" size="20" value="" /></TD>
+						</TR> 
+						<TR >
+							<TD height="26" align="right" ><b>验证码:</b></TD>
+							<TD width="48" align="left" >
+							<div style="width:140px">
+								<div style="width:60px;float:left"><input name="vcode" type="text" size="7" style="width:60px;" value=""/></div>
+								<div style="width:56px;float:left;margin-left: 5px;"><img src="{$domain_url}vcode.php"></div>
+							</div> 
+							</TD>
+							<TD width="361"  align="left" ><span id="span_img"></span> </TD>
+						</TR> 
+						<TR >
+							<TD height="23" align="right" >&nbsp;</TD>
+							<TD colspan="2" align="left" ><input type="submit" name="Submit" value="管理员登陆" style="background-color:#00CCFF"/></TD>
+						</TR>	
+						{if $home.strMessage}
+						<TR >
+							<TD colspan="3" align="middle" > <div class="messages" id="messages">{$home.strMessage}</div> </TD>
+						</TR>	
+						{/if} 
+					</TABLE> 
+				</form>
+ 
+		</div> 
+	</div> 
+ 
+	{include file="adminfooter.html"} 
+{else}
+	<HTML>
+	  <HEAD>
+	  <TITLE>{$header_title}|后台管理</TITLE>
+		<meta name="robots" content="noindex, nofollow">
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<SCRIPT language="JavaScript" type="Text/Javascript">
+		<!-- 
+		if (window.top != window) {
+		  window.top.location.href = document.location.href;
+		} 
+		//-->
+		</SCRIPT>
+	  </HEAD> 
+ 
+		<frameset rows="75,*,22" cols="*" frameborder="no" border="0" framespacing="0">	<frame src="top.php" name="topFrame" scrolling="No" noresize="noresize" id="topFrame" />	<frameset id=frame-body name="MainFrame" cols="110,10, *" frameborder="no" border="0" framespacing="0" scrolling="yes" bordercolor="#A1C7F9">
+	  <frame id=menu-frame name="left"  noresize="true"  src="nave.php" scrolling="no" noresize="true">
+	  <frame id=drag-frame name="drag-frame" src="hidebar.html" scrolling="no" noresize="true">
+	  <frame id=main-frame name="main" src="default.php">
+	<frame src="UntitledFrame-5"></frameset>	<frame src="foot.php" name="bottomFrame" scrolling="no" noresize="noresize" /></frameset>
+		<noframes><body></body></noframes>
+ 
+	</HTML> 
+{/if}
+

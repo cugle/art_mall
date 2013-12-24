@@ -1,0 +1,123 @@
+td {
+	font-size: 9pt;
+	line-height: 13pt;
+	color: #000000;
+}
+.caption {
+	font-size: 11pt;
+	line-height: 15pt;
+	font-weight: bold;
+	text-decoration: none;
+	text-align: center;
+}
+.li{
+  font-size: 9pt;
+}
+th {
+	font-size: 9pt;
+	line-height: 18pt;
+	font-weight: bold;
+	color: #000000;
+	text-decoration: none;
+	background-color: #CAE6FB;
+}
+.stress {
+	font-size: 9pt;
+	color: red;
+}
+.a-menu {
+	font-size: 12px;
+	color: #FFFFFF;
+	text-decoration: none;
+}
+.a {
+	font-size: 9pt;
+	color: #000000;
+	text-decoration: none;
+}
+.th {
+	font-size: 9pt;
+	line-height: 15pt;
+	font-weight: bold;
+	text-decoration: none;
+	background-color: #CCCCCC;
+	text-align: center;
+
+}
+.message {
+	background-color: #eeeeee;
+}
+
+.delete {
+	margin: 0px;
+	padding: 0px;
+	font-size: 9pt;
+	line-height: 11pt;
+	width: 32px;
+	color: #FF0000;
+
+}
+a {
+	font-size: 9pt;
+	line-height: 13pt;
+	text-decoration: none;
+}
+
+.table-border {
+	border: 1px solid #000000;
+}
+#main_menu td,#main_menu a {
+	font-size: 9pt;
+	line-height: 13pt;
+	font-weight: bold;
+	color: #333333;
+	text-align: center;
+}
+#function td,#function a {
+	font-size: 9pt;
+	line-height: 13pt;
+	font-weight: normal;
+	color: #000000;
+/*	background-color: #cccccc;*/
+	text-align: center;
+}
+#admin_info td {
+	font-size: 9pt;
+	line-height: 13pt;
+	font-weight: normal;
+	color: #ffffff;
+}
+body {
+	margin-left: 0px;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+	font-size: 9pt;
+}
+div.scrol{
+	height:100px;
+	width:100%;
+	overflow-y:auto;
+	overflow-x:auto;
+	border: 1px dashed #999999;
+	background-color: #f5f5f5;
+	
+}
+.shadow{  
+   width:98%;  
+   font-size:14px; 
+   font-weight: bold;
+   padding:5px;  
+   /*以下属性作用于firefox */
+   -moz-box-shadow :3px 3px 4px #ccc;  /*-maz- box-shadow:水平方向位移 竖直方向位移 模糊半径 颜色 */
+	/*以下属性为ie 支持*/
+   *filter : progid:DXImageTransform.Microsoft.Shadow(Strength=4, Direction=135, Color="#cccccc"); /*力度，角度，颜色 */ 
+   /*以下只能被safari3浏览器支持*/
+   -webkit-box-shadow :3px 3px 4px #ccc; 
+	/*以下属性只被Opera到最新的10.53版本支持*/
+   box-shadow :3px 3px 4px #ccc;  
+} 
+#pagenav{font-size:12px;width:100%;	height:20px;}
+#pagenav .number{color:#FF6600;}
+#pagenav .pageleft{float: left;}
+#pagenav .pageright{float: right;}

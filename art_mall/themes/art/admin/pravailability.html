@@ -1,0 +1,52 @@
+{include file="adminheader.html"}  
+ 
+<div class="box"> 
+	<div class="box" style="width:90%;padding: 0;margin:2px">
+		<form name="form1" method="post" enctype="multipart/form-data" action=""> 
+			<TABLE width="100%" border=0>
+				<TR> 
+					<TD> 
+						<span class="txt">经销商名称:</span>
+						<input name="pra_name" type="text" value="{$home.Anorm.pra_name}" size="20" />
+						<span class="txt">排序:</span>		
+						<input name="sort_order" type="text" value="{if $home.Anorm.praid > 0}{$home.Anorm.sort_order}{else}5{/if}" size="3" />
+						<div class="line"></div>
+						<span class="txt">经销商管理帐号:</span>
+						<input name="user_name" type="text" size="12" value="" />
+						<span class="txt">Email:</span>
+						<input name="email" type="text" size="12" value="" />
+						<span class="txt">密码:</span> 
+						<input name="password" type="text" size="12" value="" />
+						<div class="line"></div>
+						<input type="hidden" name="action" value="{if $home.Anorm.praid > 0}edit{else}add{/if}" />
+						<input type="submit" name="Submit" value="{if $home.Anorm.praid > 0}经销商编辑{else}经销商增加{/if}" style="background-color: #FFCC66;margin-left: 30px"/>
+						<input type="hidden" name="praid" value="{if $home.Anorm.praid > 0}{$home.Anorm.praid}{else}0{/if}" />  
+						<input type="hidden" name="page" value="{$home.Anorm.page}" />  
+					</TD> 
+				</TR>
+				{if $home.Anorm.struser}
+				<TR class="even"> 
+					<TD>
+						<span class="txt">参与管理者:</span>{$home.Anorm.struser}
+					</TD> 
+				</TR>
+				{/if}
+			</table>
+		</form>
+	</div>
+	<TABLE width="100%" border=0>
+	  <TR class=bg5>
+		<TD width="20%" align=left>经销商名</TD>
+		<TD width="32%" align=left>参与管理的账号</TD>
+		<TD width="35%" align=left>描述</TD>
+		<TD width="5%" align=left>排序</TD> 
+		<TD width="8%" align=left>操作</TD>
+	  </TR>
+	  {$home.StrtypeAll}
+	  <TR class=bg5>
+		<TD colspan="5" align=right>{$home.showpage}</TD>
+	  </TR>
+	</TABLE>
+</div>
+ 
+{include file="adminfooter.html"} 

@@ -1,0 +1,68 @@
+RewriteEngine on
+RewriteBase /
+
+RewriteCond %{REQUEST_METHOD} ^(TRACE|TRACK)
+RewriteRule .* - [F]
+
+RewriteRule ^index.html$ index.php
+RewriteRule ^articles.html$ articles.php 
+RewriteRule ^articles-([0-9]+)-([0-9]+)\.html$ articles.php?id=$1&page=$2
+
+RewriteRule ^article.html$ article.php
+RewriteRule ^article-([0-9]+)-([0-9]+)\.html$ article.php?id=$1&pnid=$2 
+RewriteRule ^acomms.html$ acomms.php 
+RewriteRule ^acomms-([0-9]+)-([0-9]+)\.html$ acomms.php?id=$1&page=$2 
+
+RewriteRule ^user.html$ user.php
+RewriteRule ^user-(.*)-([0-9]+)\.html$ user.php?o=$1&page=$2 
+
+RewriteRule ^map.html$ map.php
+RewriteRule ^map-([0-9]+)-([0-9]+)\.html$ map.php?id=$1&page=$2 
+
+RewriteRule ^pic.html$ pic.php
+RewriteRule ^pic-([0-9]+)\.html$ pic.php?id=$1
+RewriteRule ^pics.html$ pics.php
+RewriteRule ^pics-([0-9]+)\.html$ pics.php?page=$1  
+
+RewriteRule ^vip.html$ vip.php
+RewriteRule ^vip-([0-9]+)\.html$ vip.php?page=$1  
+
+RewriteRule ^vote.html$ vote.php
+RewriteRule ^vote-([0-9]+)\.html$ vote.php?page=$1  
+RewriteRule ^vote_show-([0-9]+)\.html$ vote_show.php?viid=$1 
+
+RewriteRule ^votes.html$ votes.php
+RewriteRule ^vote-([0-9]+)-([0-9]+)\.html$ vote.php?id=$1&page=$2  
+
+RewriteRule ^support.html$ support.php
+RewriteRule ^support-([0-9]+)\.html$ support.php?page=$1 
+
+RewriteRule ^about.html$ about.php 
+
+RewriteRule ^links.html$ links.php
+RewriteRule ^links-([0-9]+)\.html$ links.php?page=$1
+
+RewriteRule ^products.html$ products.php 
+RewriteRule ^products-([0-9]+)-(.*)-(.*)-([0-9]+)-([0-9]+)\.html$ products.php?id=$1&s=$2&e=$3&bys=$4&page=$5
+RewriteRule ^product-([0-9]+)\.html$ product.php?id=$1
+RewriteRule ^procomms.html$ procomms.php
+RewriteRule ^procomms-([0-9]+)-([0-9]+)\.html$ procomms.php?id=$1&page=$2
+
+RewriteRule ^images_list.html$ images_list.php 
+RewriteRule ^images_list-([0-9]+)-([0-9]+)\.html$ images_list.php?id=$1&op=$2
+
+RewriteRule ^shop-([0-9]+)\.html$ shop.php?id=$1
+RewriteRule ^shop_a-([0-9]+)-([0-9]+)\.html$ shop_a.php?id=$1&arid=$2
+RewriteRule ^shop_h-([0-9a]+)-([0-9]+)\.html$ shop_h.php?id=$1&page=$2
+RewriteRule ^shop_ht-([0-9]+)-([0-9]+)\.html$ shop_ht.php?id=$1&prid=$2
+RewriteRule ^shop_c-([0-9]+)-([0-9]+)\.html$ shop_c.php?id=$1&page=$2 
+RewriteRule ^pravail-([0-9]+)\.html$ pravail.php?page=$1
+RewriteRule ^pravail.html$ pravail.php
+
+RewriteRule ^brands.html$ brands.php
+RewriteRule ^brands-([0-9]+)\.html$ brands.php?page=$1
+RewriteRule ^brand-([0-9]+)-([0-9]+)\.html$ brand.php?id=$1&page=$2
+RewriteRule ^webreg.html$ webreg.php
+
+RewriteRule ^search.html$ search.php
+RewriteRule ^search-([0-9]+)-([0-9]+)-(.*)-([0-9]+)\.html$ search.php?op=$1&id=$2&name=$3&page=$4

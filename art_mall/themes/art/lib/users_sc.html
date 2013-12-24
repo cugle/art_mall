@@ -1,0 +1,48 @@
+<li style="margin:2px 0 0 0;color:#0066FF;font-weight: bold; padding-left:5px ;background-color:#F5F5F5;width:615px;"> 
+	<span  style="float:right;margin: 1px;display:none" id="jies_top" ><A HREF="user.php?o=car" style="color:#6600FF">进入购物车结算</A></span>
+	<span class="fenye" style="margin: 1px;"  > {$home.showpage} </span >
+</li>   
+<li class="line" style="margin:5px;width:615px; height:24px;font-weight: bold; overflow:hidden;"> 
+	<div style="width:70px;text-align:center; height:24px;float:left">产品图片</div>
+	<div style="width:100px;text-align:center; height:24px;float:left">编号</div> 
+	<div style="width:150px;text-align:center; height:24px;float:left">名称</div>  
+	<div style="width:60px;text-align:center; height:24px;float:left">现货价</div> 
+	<div style="width:60px;text-align:center; height:24px;float:left">您的价格</div> 
+	<div style="width:60px;text-align:center; height:24px;float:left">购买数量</div>
+	<div style="width:60px;text-align:center; height:24px;float:left">库存</div> 
+	<div style="width:50px;text-align:center; height:24px;float:left">删除</div> 
+</li>  
+<!-- {if $home.products}-->
+	<!-- {foreach from=$home.products item=products} -->  
+			<li class="line" style="margin:5px;width:615px; height:52px; overflow:hidden;" id="scdel_{$products.prid}"> 
+				<div style="width:70px;text-align:center; height:52px;float:left; overflow:hidden;">
+				<a href="{$products.product_url}" target="_blank"><img SRC="{$products.shop_thumb}"  WIDTH="67" HEIGHT="50" BORDER="0" title="{$products.alt_name} {$products.edit_comm}"></a>
+				</div>
+				<div style="width:100px;text-align:center; height:52px;float:left; overflow:hidden;">{$products.shop_sn}</div> 
+				<div style="width:150px;text-align:center; height:52px;float:left; overflow:hidden;"><A HREF="{$products.product_url}" target="_blank">{$products.name}</A></div>  
+				<div style="width:60px;text-align:center; height:52px;float:left">{$products.shop_price}</div> 
+				<div style="width:60px;text-align:center; height:52px;float:left">{$products.s_discount}</div>  
+				<div style="width:60px;text-align:center; height:52px;float:left"><INPUT TYPE="text" NAME="prid[{$products.prid}]" value="" style="width:30px" onblur=cars_edit('carbuy',{$products.prid},this.value,{$products.shop_number})></div> 
+				<div style="width:60px;text-align:center; height:52px;float:left">{$products.shop_number}</div> 
+				<div style="width:50px;text-align:center; height:52px;float:left;cursor:pointer;"  onMouseDown="if(confirm('删除')) scdel({$products.prid},'scdel')">删除</div>
+			</li> 
+	<!-- {/foreach} -->
+<!-- {/if}--> 
+<li style="margin:2px 0 0 0;color:#0066FF;font-weight: bold; padding-left:5px ;background-color:#F5F5F5;width:615px;"> 
+	<span  style="float:right;margin: 1px;display:none" id="jies_botton" ><A HREF="user.php?o=car" style="color:#6600FF">进入购物车结算</A></span>
+	<span class="fenye" style="margin: 1px;"  > {$home.showpage} </span >  
+</li>   
+ 
+<script language="JavaScript">
+  {literal}
+	function scdel(a,op)
+	{ 
+		obj = op + "_" + a;
+		if(op == 'scdel'){
+			document.getElementById(obj).style.display="none";
+		}
+		var strTemp = "ajax_command.php?id=" + a + "&op=" + op; 
+		send_request(strTemp);
+	}
+  {/literal}
+</script>
